@@ -9,7 +9,12 @@ buila a site all about "me"
 
 ## 实现思路
 * [前端书签网](http://febm.tuaran.site)
-* [日立](http://ddup.tuaran.site)
+
+[README](https://github.com/TUARAN/FEMB#febm)
+
+思路：采用 vuecli3 脚手架搭建。将浏览器书签导出为 x.html，采用 node 读取本地文件解析成书签树格式，将书签树按照指定样式绘制。
+
+* [每日一立](http://ddup.tuaran.site)
 
 思路：采用 dayspan-vuetify 开源库，但是该开源库的数据存储方式是存 localstorage，数据只能本地保存。所以考虑用 express 做服务，post 数据存在 mysql 中，然后 get 获取。以达到数据线上存储的目的。
 
@@ -20,21 +25,19 @@ buila a site all about "me"
 ```
 // mysql8.0 修改密码
 // 初始密码为空
-  ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'xxxxxx';  
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'xxxxxx';  
 ```
-
-# 技术栈
-
-## vuetify
+## 技术栈
+### vuetify
 [vuetify](https://vuetifyjs.com/zh-Hans/getting-started/quick-start/)
 
-## express
+### express
 [generator 创建](https://www.expressjs.com.cn/starter/generator.html)
 
-## 力荐 website
+### 力荐 website
 [made with vue.js](https://madewithvuejs.com)
 
-## dayspan-vuetify
+### dayspan-vuetify
 [dayspan-vuetify](https://github.com/ClickerMonkey/dayspan-vuetify)
 
 
