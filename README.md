@@ -5,7 +5,7 @@ buila a site all about "me"
 
 * [tuaran.github.io](https://tuaran.github.io)
 * [前端书签网](http://febm.tuaran.site)
-* [日立](http://ddup.tuaran.site)
+* [每日一立](http://ddup.tuaran.site)
 
 ## 实现思路
 * [前端书签网](http://febm.tuaran.site)
@@ -21,12 +21,7 @@ buila a site all about "me"
 1. 采用 exprss 作为服务器，axios 作请求库，本地开发 vuecli2 proxy 作代理。
 2. express 连接数据库：[mysql](https://expressjs.com/zh-cn/guide/database-integration.html)  [node-express-mysql-demo](https://github.com/lihao336991/node-express-mysql)
 3. centos 安装 mysql [centos 安装 mysql](http://www.glmapper.com/2019/01/05/mysql-on-linux/) [navicat12 破解](https://defcon.cn/513.html)
-
-```
-// mysql8.0 修改密码
-// 初始密码为空
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'xxxxxx';  
-```
+4. 备注：初始安装，用户名为 root密码为空，需修改密码。
 ## 技术栈
 ### vuetify
 [vuetify](https://vuetifyjs.com/zh-Hans/getting-started/quick-start/)
