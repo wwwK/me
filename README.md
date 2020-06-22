@@ -1,5 +1,5 @@
 # me
-buila a site all about "me"
+[buila a site all about "me"](https://tuaran.site)
 
 # 我的 web 应用
 
@@ -35,4 +35,7 @@ buila a site all about "me"
 ### dayspan-vuetify
 [dayspan-vuetify](https://github.com/ClickerMonkey/dayspan-vuetify)
 
-
+### nginx
+* nginx 配置 SSL 证书
+* http return https
+* 多 server
