@@ -4,206 +4,347 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>TUARAN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- google search console -->
+    <meta name="google-site-verification" content="aMhxD50Qb1wfV9Zgn2oSp28v0A4n0HcKcm5avGZR8H4" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171085431-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-171085431-1');
+    </script>
+    <style>
+        /* 雅虎样式初始化 */
+        body,
+        div,
+        dl,
+        dt,
+        dd,
+        ul,
+        ol,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code,
+        form,
+        fieldset,
+        legend,
+        input,
+        button,
+        textarea,
+        p,
+        blockquote,
+        th,
+        td {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #fff;
+            color: #555;
+            font-size: 14px;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+        }
+
+        td,
+        th,
+        caption {
+            font-size: 14px;
+        }
+
+        /* h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; } */
+        address,
+        caption,
+        cite,
+        code,
+        dfn,
+        em,
+        strong,
+        th,
+        var {
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            border: none;
+        }
+
+        ol,
+        ul,
+        li {
+            list-style: none;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            font: 14px Verdana, Helvetica, Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        html {
+            overflow-y: scroll;
+        }
+
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        /* 我的样式 */
+        body {
+            /* 掘金 */
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+        }
+
+        a {
+            border-bottom: 0.1875rem solid yellow;
+        }
+
+        .home {
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: space-around;
+            font-size: 1rem;
+        }
+
+        .principle {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .content-wrap {
+            max-width: 75rem;
+            margin: 0 auto;
+            height: 31.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .intro-line {
+            padding: 0.3125rem 0.625rem;
+        }
+
+        .beian {
+            margin-bottom: 5px;
+        }
+
+        .footer-p {
+            font-size: 0.9rem;
+            color: #a1a1a1;
+            text-align: center;
+        }
+
+        .surprise {
+            color: #fff;
+        }
+
+        .btn-f12 {
+            border-radius: 1px;
+            padding: 0 0.1rem;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .bottom-link {
+            border-bottom: none;
+            color: rgb(107, 107, 107);
+        }
+
+        /*coffee cup - loading*/
+        .coffee_cup {
+            width: 20px;
+            height: 24px;
+            border: 1px #666 solid;
+            border-radius: 0px 0px 5px 5px;
+            position: relative;
+            margin: 36px auto;
+            position: absolute;
+            top: 35%;
+            margin-top: -12px;
+            left: 50%;
+            margin-left: -10px;
+        }
+
+        .coffee_cup:after,
+        .coffee_cup:before {
+            position: absolute;
+            content: "";
+        }
+
+        .coffee_cup:after {
+            width: 5px;
+            height: 12px;
+            border: 1px #fff solid;
+            border-left: none;
+            border-radius: 0px 20px 20px 0px;
+            left: 20px;
+        }
+
+        .coffee_cup:before {
+            width: 1px;
+            height: 6px;
+            background-color: #666;
+            top: -10px;
+            left: 4px;
+            box-shadow: 5px 0px 0px 0px #666,
+                5px -5px 0px 0px #666,
+                10px 0px 0px 0px #666;
+            -webkit-animation: steam 1s linear infinite alternate;
+            -moz-animation: steam 1s linear infinite alternate;
+            animation: steam 1s linear infinite alternate;
+        }
+
+        @-webkit-keyframes steam {
+            0% {
+                height: 0px;
+            }
+
+            100% {
+                height: 6px;
+            }
+        }
+
+        @-moz-keyframes steam {
+            0% {
+                height: 0px
+            }
+
+            100% {
+                height: 6px;
+            }
+        }
+
+        @keyframes steam {
+            0% {
+                height: 0px
+            }
+
+            100% {
+                height: 6px;
+            }
+        }
+
+        #rotate {
+            animation: spin 3s steps(36) infinite;
+            margin-left: 5px;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #bgmAudio {
+            position: absolute;
+            visibility: hidden;
+        }
+    </style>
 </header>
 
 <body>
-    <h3 class="principle" title="principle">Simple! So Charming!</h3>
-    <div class="content-wrap">
-        <div class="intro">
-            <p class="intro-line"><b>你好!</b> 很高兴遇见你！ 你可以叫我 —— <b>阿燃</b>！</p>
-            <p class="intro-line">我的职业是一名<a href='https://baike.baidu.com/item/前端开发工程师'>前端开发工程师</a>。</p>
-            <p class="intro-line">我使用 GitHub Page 托管 <a href='https://tuaran.github.io'>我的博客</a>，用于分享交流技术与生活。</p>
-            <p class="intro-line">非常欢迎你能到我的<a href="https://github.com/TUARAN">仓库主页</a>互相 follow ! 互相 <b>⭐star⭐</b>！</p>
-            <p class="intro-line">你也可在这些地方找到我：<a href="https://juejin.im/user/5bcd67a8e51d457947022910">掘金</a>、<a
-                    href="https://blog.csdn.net/qq_37969897/">CSDN</a>、<a
-                    href="https://www.zhihu.com/people/tu-tu-tu-tu-tu-25-1">知乎</a>、<a
-                    href="https://www.huxiu.com/member/2412214.html">虎嗅</a>。我将在这些平台保持活跃，欢迎交流。</p>
-            <p class="intro-line surprise"><span id='f12' title="F12 / Ctrl+Shift+C" class="btn-f12">F12</span> 有彩蛋!</p>
-            <p class="intro-line"></p>
-            <p class="intro-line">同时，我在自己的 ECS 上搭建了一些 web 服务。致力于做<b>有用的</b>个人站点！以下：</p>
-            <p class="intro-line">1. 前端书签网 <a href="http://febm.tuaran.site">febm.tuaran.site</a></p>
-            <p class="intro-line">2. 每日一立 <a href="http://ddup.tuaran.site">ddup.tuaran.site</a></p>
+    <div class="coffee_cup loader"></div>
+    <div class="home" style="display: none;">
+        <h3 class="principle" title="principle">Simple! So Charming!
+            <img id='rotate' src="./assets/img/sun.svg" width="20" height="20" type="image/svg+xml" /></h3>
+        <div class="content-wrap">
+            <div class="intro">
+                <p class="intro-line"><b>你好!</b> 很高兴遇见你！ 你可以叫我 —— <b>阿燃</b>！</p>
+                <p class="intro-line">我的职业是一名<a href='https://baike.baidu.com/item/前端开发工程师'>前端开发工程师</a>。</p>
+                <p class="intro-line">我使用 GitHub Page 托管 <a href='https://tuaran.github.io'>我的博客</a>，用于分享交流技术与生活。</p>
+                <p class="intro-line">非常欢迎你能到我的<a href="https://github.com/TUARAN">仓库主页</a>互相 follow ! 互相 <b>⭐star⭐</b>！
+                </p>
+                <p class="intro-line">你也可在这些地方找到我：<a href="https://juejin.im/user/5bcd67a8e51d457947022910">掘金</a>、<a
+                        href="https://blog.csdn.net/qq_37969897/">CSDN</a>、<a
+                        href="https://www.zhihu.com/people/tu-tu-tu-tu-tu-25-1">知乎</a>、<a
+                        href="https://www.huxiu.com/member/2412214.html">虎嗅</a>。我将在这些平台保持活跃，欢迎交流。</p>
+                <p class="intro-line surprise"><span id='f12' title="F12 / Ctrl+Shift+C" class="btn-f12">F12</span> 有彩蛋!
+                </p>
+                <p class="intro-line"></p>
+                <p class="intro-line">同时，我在自己的 ECS 上搭建了一些 web 服务。致力于做<b>有用的</b>个人站点！以下：</p>
+                <p class="intro-line">1. 前端书签网 <a href="http://febm.tuaran.site">febm.tuaran.site</a></p>
+                <p class="intro-line">2. 每日一立 <a href="http://ddup.tuaran.site">ddup.tuaran.site</a></p>
+            </div>
         </div>
+
+        <div class="footer">
+            <div class="footer-p beian">粤ICP备20050840号 <span>©2020</span></div>
+            <div class="footer-p ">Statistic Analysis Power By <a class="bottom-link"
+                    href='https://analytics.google.com/analytics/web/provision/#/provision'>Google Analytics</a> | <a
+                    class="bottom-link" href='https://search.google.com/search-console'> Google Search
+                    Console</a></div>
+        </div>
+        <!-- <audio id='bgmAudio' controls src="./assets/audio/comebacktome.mp3" autoplay="autoplay">
+            Your browser does not support the
+            <code>audio</code> element.
+        </audio> -->
     </div>
-    <div class="beian">粤ICP备20050840号 <span>©2020 TUARAN</span> </div>
 </body>
 <script>
     console.log("----------------------- 更多相关 -----------------------\n诚邀志同道合者同行 ~\n")
     console.log("1. 加我微信号😁：", "Ifuckinghigh")
     console.log("2. Base📍：", "广州")
     console.log("3. 毕业院校🏫：", "华南师大")
-    console.log("4. focus 👀：","股票、科哲神学（feat.量子力学）、电影解说、微信读书、制作壁纸、老 JRS、老祖安狂人 etc.")
+    console.log("4. focus 👀：", "股票、科哲神学（feat.量子力学）、电影解说、微信读书、壁纸制作、老 JRS、老祖安狂人 etc.")
     console.log("----------------------- 网站相关 -----------------------")
     console.log("1. loading and network information🔍:", chrome.loadTimes())
     console.log("2. 阿里云推荐码🐎：https://www.aliyun.com/minisite/goods?userCode=nk1m1mfv");
     console.log("3. 备案变更🔒：DHH933");
 </script>
 <script>
+    // loading
+    window.onload = function () {
+        var loader = document.getElementsByClassName("loader")[0];
+        var home = document.getElementsByClassName("home")[0];
+        loader.style.display = "none"
+        home.style.display = "flex"
+    }
     // 监听点击
-    document.getElementById("f12").addEventListener("click", function(){ 
+    document.getElementById("f12").addEventListener("click", function () {
         // TODO: JS 模拟按键
     }, false);
+    // TODO: set BGM
 </script>
-<style>
-    /* 雅虎样式初始化 */
-    body,
-    div,
-    dl,
-    dt,
-    dd,
-    ul,
-    ol,
-    li,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    pre,
-    code,
-    form,
-    fieldset,
-    legend,
-    input,
-    button,
-    textarea,
-    p,
-    blockquote,
-    th,
-    td {
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        background: #fff;
-        color: #555;
-        font-size: 14px;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-    }
-
-    td,
-    th,
-    caption {
-        font-size: 14px;
-    }
-
-    /* h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; } */
-    address,
-    caption,
-    cite,
-    code,
-    dfn,
-    em,
-    strong,
-    th,
-    var {
-        font-style: normal;
-        font-weight: normal;
-    }
-
-    a {
-        color: #555;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    img {
-        border: none;
-    }
-
-    ol,
-    ul,
-    li {
-        list-style: none;
-    }
-
-    input,
-    textarea,
-    select,
-    button {
-        font: 14px Verdana, Helvetica, Arial, sans-serif;
-    }
-
-    table {
-        border-collapse: collapse;
-    }
-
-    html {
-        overflow-y: scroll;
-    }
-
-    .clearfix:after {
-        content: ".";
-        display: block;
-        height: 0;
-        clear: both;
-        visibility: hidden;
-    }
-
-    .clearfix {
-        *zoom: 1;
-    }
-
-    /* 我的样式 */
-    body {
-        /* 简书 */
-        font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-        /* segmentfault */
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-        /* 掘金 */
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
-
-        font-size: 1rem;
-        padding: 5vh 10vw;
-    }
-
-    a {
-        border-bottom: 0.1875rem solid yellow;
-    }
-
-    .principle {
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .content-wrap {
-        max-width: 75rem;
-        margin: 0 auto;
-        height: 31.25rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .intro-line {
-        padding: 0.3125rem 0.625rem;
-    }
-
-    .beian {
-        font-size: 0.9rem;
-        position: absolute;
-        width: 15.625rem;
-        left: 50%;
-        margin-left: -7.5rem;
-        bottom: 1.5rem;
-        color: #a1a1a1;
-    }
-    .surprise{
-        color: #fff;
-    }
-    .btn-f12 {
-        border-radius: 1px;
-        padding: 0 0.1rem;
-        cursor: pointer;
-        color: #fff;
-    }
-</style>
 
 </html>

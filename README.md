@@ -22,15 +22,14 @@
 2. express 连接数据库：[mysql](https://expressjs.com/zh-cn/guide/database-integration.html)  [node-express-mysql-demo](https://github.com/lihao336991/node-express-mysql)
 3. centos 安装 mysql [centos 安装 mysql](http://www.glmapper.com/2019/01/05/mysql-on-linux/) [navicat12 破解](https://defcon.cn/513.html)
 4. 备注：初始安装，用户名为 root密码为空，需修改密码。
+
+
 ## 技术栈
 ### vuetify
 [vuetify](https://vuetifyjs.com/zh-Hans/getting-started/quick-start/)
 
 ### express
 [generator 创建](https://www.expressjs.com.cn/starter/generator.html)
-
-### 力荐 website
-[made with vue.js](https://madewithvuejs.com)
 
 ### dayspan-vuetify
 [dayspan-vuetify](https://github.com/ClickerMonkey/dayspan-vuetify)
@@ -39,3 +38,6 @@
 * nginx 配置 SSL 证书
 * http return https
 * 多 server
+
+### 推荐 website
+[made with vue.js](https://madewithvuejs.com)

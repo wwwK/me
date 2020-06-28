@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+  </head>
+  <body onload="loadResources()">
+    <script>
+        function loadResources()
+        {
+           var start = new Date().getTime();
+           var image1 = new Image();
+           var resourceTiming = function() {
+               var now = new Date().getTime();
+               var latency = now - start;
+               alert("End to end qresource fetch: " + latency);
+           };
+
+           image1.onload = resourceTiming;
+           image1.src = 'https://www.w3.org/Icons/w3c_main.png';
+        }
+    </script>
+    <img src="https://www.w3.org/Icons/w3c_home.png">
+  </body>
+</html>
