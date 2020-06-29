@@ -6,6 +6,7 @@
 * [tuaran.github.io](https://tuaran.github.io)
 * [前端书签网](http://febm.tuaran.site)
 * [每日一立](http://ddup.tuaran.site)
+* [图床服务](http://120.78.205.57:3000)
 
 ## 实现思路
 * [前端书签网](http://febm.tuaran.site)
@@ -22,7 +23,12 @@
 2. express 连接数据库：[mysql](https://expressjs.com/zh-cn/guide/database-integration.html)  [node-express-mysql-demo](https://github.com/lihao336991/node-express-mysql)
 3. centos 安装 mysql [centos 安装 mysql](http://www.glmapper.com/2019/01/05/mysql-on-linux/) [navicat12 破解](https://defcon.cn/513.html)
 4. 备注：初始安装，用户名为 root密码为空，需修改密码。
+//TODO:数据的存储和读取
 
+* 图床服务
+思路：采用 Express 搭建，支持多图上传。
+
+//TODO:优化 UI
 
 ## 技术栈
 ### vuetify
