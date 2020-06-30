@@ -6,6 +6,7 @@
 * [tuaran.github.io](https://tuaran.github.io)
 * [前端书签网](http://febm.tuaran.site)
 * [每日一立](http://ddup.tuaran.site)
+* [图床服务](http://120.78.205.57:3000)
 
 ## 实现思路
 * [前端书签网](http://febm.tuaran.site)
@@ -23,6 +24,16 @@
 3. centos 安装 mysql [centos 安装 mysql](http://www.glmapper.com/2019/01/05/mysql-on-linux/) [navicat12 破解](https://defcon.cn/513.html)
 4. 备注：初始安装，用户名为 root密码为空，需修改密码。
 
+//TODO:数据的存储和读取
+
+* [图床服务](http://120.78.205.57:3000)
+
+思路：采用 Express 搭建，支持多图上传。
+
+1. 实现图片的上传，存储到服务器，重命名。
+2. 图片读取瀑布流展示。
+
+//TODO:优化 UI
 
 ## 技术栈
 ### vuetify
@@ -38,6 +49,9 @@
 * nginx 配置 SSL 证书
 * http return https
 * 多 server
+
+### JS 瀑布流
+[瀑布流](https://www.jianshu.com/p/39c5f4beb575)
 
 ### 推荐 website
 [made with vue.js](https://madewithvuejs.com)
