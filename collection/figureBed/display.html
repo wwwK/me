@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width: 90%;
+            margin: 20px auto;
+        }
+        #box ul{
+            list-style: none;
+            float: left;
+            width: 24%;
+            margin: 5px;
+        }
+        #box ul img{
+            width: 100%;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul></ul>
+        <ul></ul>
+        <ul></ul>
+        <ul></ul>
+    </div>
+    <script type="text/javascript">
+        var ulArr = document.querySelectorAll("ul");
+        let xhr = new XMLHttpRequest()
+        xhr.open('GET', '/getImgs', true)
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                let resObj = JSON.parse(xhr.responseText).message;
+                let hostport = document.location.host; //ip:端口号
+                resObj && resObj.forEach(item => {
+                    var img = document.createElement("img");
+                    img.src ='http://' + hostport +"/uploads/"+item;
+                    var li = document.createElement("li");
+                    li.appendChild(img);
+                    var minHeightUl = ulArr[0];
+                    for (var j = 0; j < ulArr.length; j++) {
+                        if (minHeightUl.offsetHeight > ulArr[j].offsetHeight) {
+                            minHeightUl = ulArr[j];
+                        }
+                    }
+                    minHeightUl.appendChild(li);
+                })
+
+            }
+        }
+    </script>
+</body>
+</html>
