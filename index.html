@@ -127,6 +127,7 @@
         body {
             /* 掘金 */
             font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+            background: #FDFDFD url(./assets/img/pattern.jpg) repeat-x
         }
 
         a {
@@ -139,6 +140,7 @@
             flex-direction: column;
             justify-content: space-around;
             font-size: 1rem;
+            overflow-x: hidden;
         }
 
         .principle {
@@ -146,6 +148,7 @@
             margin: 0 auto;
             text-align: center;
             margin-bottom: 2rem;
+            user-select: none;
         }
 
         .content-wrap {
@@ -159,6 +162,7 @@
 
         .intro-line {
             padding: 0.3125rem 0.625rem;
+            user-select: none;
         }
 
         .beian {
@@ -173,6 +177,7 @@
 
         .surprise {
             color: #fff;
+            user-select: text;
         }
 
         .btn-f12 {
@@ -262,7 +267,7 @@
         }
 
         #rotate {
-            animation: spin 3s steps(36) infinite;
+            animation: spin 3s steps(24) infinite;
             margin-left: 5px;
         }
 
@@ -275,6 +280,30 @@
                 transform: rotate(360deg);
             }
         }
+
+        img.topleft {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            img.topleft {
+                width: 162.5;
+                height: 163.5;
+                opacity: 0.2;
+            }
+        }
+
+        .uareawsome {
+            opacity: 0;
+            font-size: 1px;
+            user-select: none;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            cursor: pointer;
+        }
     </style>
 </header>
 
@@ -282,34 +311,52 @@
     <div class="coffee_cup loader"></div>
     <div class="home" style="display: none;">
         <h3 class="principle">生命以负<span title='傲慢、贪婪、色欲、嫉妒、暴食、愤怒、怠惰'>熵</span>为食
-            <img id='rotate' src="./assets/img/sun.svg" width="20" height="20" title='愿你今日美好' type="image/svg+xml" /></h3>
+            <img id='rotate' src="./assets/img/sun.svg" width="50" height="50" title='愿你今日美好' type="image/svg+xml" />
+        </h3>
+        <img src="./assets/img/tree.png" alt="" width="385" height="387" class="topleft">
         <div class="content-wrap">
             <div class="intro">
-                <p class="intro-line"><b>你好!</b> 遇见即是缘起，很高兴能遇见你！你可以叫我 —— <b>阿燃</b>！</p>
-                <p class="intro-line">我是一名<a href='https://baike.baidu.com/item/前端开发工程师'>前端开发工程师</a>。</p>
-                <p class="intro-line">我使用 GitHub Page 托管 <a href='https://tuaran.github.io'>我的博客</a>，用于分享交流技术与生活。</p>
-                <p class="intro-line">非常欢迎你能到我的<a href="https://github.com/TUARAN">仓库主页</a>互相 follow ! 互相 <b>⭐star⭐</b>！
+                <p class="intro-line"><b>你好!</b> 遇见即是缘起，很高兴能遇见你！你可以叫我 —— <b>阿燃</b>！<span
+                        style="font-size: 12px;color:#666">（AKA：<a title="吾本是58粉，后亦是风尘四侠粉，社会我瓜哥，人狠话不多，懂的都懂"
+                            target="_blank" href="https://juejin.im/user/5bcd67a8e51d457947022910">掘金安东尼</a>）</span></p>
+                <p class="intro-line">我是一名<span title="不卑不亢 砥砺前行"><a target="_blank"
+                            href='https://www.zhihu.com/question/19589966'>前端开发工程师</a></span>。
                 </p>
-                <p class="intro-line">你也可在这些地方找到我：<a href="https://juejin.im/user/5bcd67a8e51d457947022910">掘金</a>、<a
-                        href="https://blog.csdn.net/qq_37969897/">CSDN</a>、<a
-                        href="https://www.zhihu.com/people/tu-tu-tu-tu-tu-25-1">知乎</a>、<a
-                        href="https://www.huxiu.com/member/2412214.html">虎嗅</a>。我将在这些平台保持活跃，你愿意与我同行吗？</p>
+                <p class="intro-line">我使用 GitHub Page 托管 <span title="点它！"><a target="_blank"
+                            href='https://tuaran.github.io'><b style="color: #555">我的博客</b></a></span>，用于分享交流技术与生活。</p>
+                <p class="intro-line">非常欢迎你能到我的<span title="毕竟面向 star 编程（手动狗头）"><a target="_blank"
+                            href="https://github.com/TUARAN">仓库主页</a></span>互相 follow !<b>⭐star⭐</b>！
+                </p>
+                <p class="intro-line">你也可在这些地方找到我：<span title='I love "juejin.im".'><a target="_blank"
+                            href="https://juejin.im/user/5bcd67a8e51d457947022910">掘金</a></span>、<span
+                        title="中国最大程序员社区，就是这么刚！"><a target="_blank"
+                            href="https://blog.csdn.net/qq_37969897/">CSDN</a></span>、<span
+                        title="人在蒙古、刚下航母、麻省毕业、长相彦祖"><a target="_blank"
+                            href="https://www.zhihu.com/people/tu-tu-tu-tu-tu-25-1">知乎</a></span>、<span
+                        title="心有猛虎 细嗅蔷薇"><a target="_blank"
+                            href="https://www.huxiu.com/member/2412214.html">虎嗅</a></span>。我将在这些平台保持活跃，你愿意与我同行吗？</p>
                 <p class="intro-line surprise"><span id='f12' title="F12 / Ctrl+Shift+C" class="btn-f12">F12</span> 有彩蛋!
                 </p>
                 <p class="intro-line"></p>
                 <p class="intro-line">同时，我在自己的 ECS 上搭建了一些 web 服务。致力于做<b>有用的</b>个人站点！以下：</p>
-                <p class="intro-line">1. 前端书签网 <a href="http://febm.tuaran.site">febm.tuaran.site</a></p>
-                <p class="intro-line">2. 每日一立 <a href="http://ddup.tuaran.site">ddup.tuaran.site</a></p>
-                <p class="intro-line">3. 图床服务 <a href="http://120.78.205.57:3000">tarsFigureBed</a></p>
+                <p class="intro-line"><span title="这是一个前端开发在学习路上对浏览器书签收纳整理的网站！">1. 前端书签网 <a target="_blank"
+                            href="http://febm.tuaran.site">febm.tuaran.site</a>；</span></p>
+                <p class="intro-line"><span title="你可以在上面记录你的每天，每天都立Flag！O(∩_∩)O">2. 每日一立 <a target="_blank"
+                            href="http://ddup.tuaran.site">ddup.tuaran.site</a>；</span></p>
+                <p class="intro-line"><span title="免费的图床服务！你要的图床功能，我都可以有！">3. 图床服务 <a target="_blank"
+                            href="http://120.78.205.57:3000">tarsFigureBed</a>；</span></p>
             </div>
         </div>
 
         <div class="footer">
             <div class="footer-p beian">粤ICP备20050840号 <span>©2020</span></div>
-            <div class="footer-p ">Statistic Analysis Power By <a class="bottom-link"
+            <div class="footer-p ">Statistic Analysis Power By <a class="bottom-link" target="_blank"
                     href='https://analytics.google.com/analytics/web/provision/#/provision'>Google Analytics</a> | <a
-                    class="bottom-link" href='https://search.google.com/search-console'> Google Search
+                    target="_blank" class="bottom-link" href='https://search.google.com/search-console'> Google Search
                     Console</a></div>
+        </div>
+        <div class="footer-p uareawsome">
+            <div id="resume" title="这都被发现了，好啦，算你厉害！">| RESUME |</div>
         </div>
     </div>
 </body>
@@ -318,11 +365,42 @@
     console.log("1. 加我微信号😁：", "Ifuckinghigh")
     console.log("2. Base📍：", "广州")
     console.log("3. 毕业院校🏫：", "华南师大")
-    console.log("4. focus 👀：", "股票、科哲神学（feat.量子力学）、电影解说、微信读书、壁纸制作、JRS、老祖安狂人 etc.")
+    console.log("4. 我还关注👀：")
+    const focusArr = [{
+            "关注": '科哲神学',
+            "备注": "feat.量子力学",
+        },
+        {
+            "关注": '电影解说',
+            "备注": "也想当个电影解说的 youtuber",
+        },
+        {
+            "关注": '微信读书',
+            "备注": "向五百小时进发！",
+        },
+        {
+            "关注": '股票',
+            "备注": "A股虐我千百遍，我待A股如初恋",
+        },
+        {
+            "关注": '壁纸制作',
+            "备注": "https://wallhaven.cc/user/paperhawen"
+        },
+
+        {
+            "关注": 'JRS',
+            "备注": "玩梗别认真"
+        },
+        {
+            "关注": '祖安狂人',
+            "备注": "我亚索真的挺6"
+        },
+    ];
+    console.table(focusArr);
     console.log("----------------------- 网站相关 -----------------------")
     console.log("1. loading and network information🔍:", chrome.loadTimes())
     console.log("2. 阿里云推荐码🐎：https://www.aliyun.com/minisite/goods?userCode=nk1m1mfv");
-    console.log("3. 备案变更🔒：DHH933");
+    console.log("3. 备案变更🔒base64：REhIOTMz");
 </script>
 <script>
     // loading
@@ -335,6 +413,9 @@
     // 监听点击
     document.getElementById("f12").addEventListener("click", function () {
         // TODO: JS 模拟按键
+    }, false);
+    document.getElementById("resume").addEventListener("click", function () {
+        window.open("/resume")
     }, false);
     // TODO: set BGM
 </script>
