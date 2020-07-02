@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>TUARAN</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- google search console -->
     <meta name="google-site-verification" content="aMhxD50Qb1wfV9Zgn2oSp28v0A4n0HcKcm5avGZR8H4" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -15,71 +15,26 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-
         gtag('config', 'UA-171085431-1');
     </script>
     <style>
-        /* 雅虎样式初始化 */
-        body,
-        div,
-        dl,
-        dt,
-        dd,
-        ul,
-        ol,
-        li,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        pre,
-        code,
-        form,
-        fieldset,
-        legend,
-        input,
-        button,
-        textarea,
-        p,
-        blockquote,
-        th,
-        td {
+        /* 参考雅虎样式初始化 */
+        * {
             margin: 0;
             padding: 0;
         }
 
         body {
-            background: #fff;
             color: #555;
-            font-size: 14px;
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-        }
-
-        td,
-        th,
-        caption {
-            font-size: 14px;
-        }
-
-        /* h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; } */
-        address,
-        caption,
-        cite,
-        code,
-        dfn,
-        em,
-        strong,
-        th,
-        var {
-            font-style: normal;
-            font-weight: normal;
+            /* 掘金 */
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+            background: #FDFDFD url(./assets/img/pattern.jpg) repeat-x;
         }
 
         a {
             color: #555;
             text-decoration: none;
+            border-bottom: 2px solid yellow;
         }
 
         a:hover {
@@ -90,56 +45,11 @@
             border: none;
         }
 
-        ol,
-        ul,
-        li {
-            list-style: none;
-        }
-
-        input,
-        textarea,
-        select,
-        button {
-            font: 14px Verdana, Helvetica, Arial, sans-serif;
-        }
-
-        table {
-            border-collapse: collapse;
-        }
-
-        html {
-            overflow-y: scroll;
-        }
-
-        .clearfix:after {
-            content: ".";
-            display: block;
-            height: 0;
-            clear: both;
-            visibility: hidden;
-        }
-
-        .clearfix {
-            *zoom: 1;
-        }
-
-        /* 我的样式 */
-        body {
-            /* 掘金 */
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
-            background: #FDFDFD url(./assets/img/pattern.jpg) repeat-x
-        }
-
-        a {
-            border-bottom: 0.1875rem solid yellow;
-        }
-
         .home {
             display: flex;
             height: 100vh;
             flex-direction: column;
             justify-content: space-around;
-            font-size: 1rem;
             overflow-x: hidden;
         }
 
@@ -147,21 +57,22 @@
             width: 100%;
             margin: 0 auto;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 30px;
             user-select: none;
         }
 
         .content-wrap {
-            max-width: 75rem;
+            max-width: 1200px;
             margin: 0 auto;
-            height: 31.25rem;
+            height: 500px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            z-index: 9;
         }
 
         .intro-line {
-            padding: 0.3125rem 0.625rem;
+            padding: 5px 10px;
             user-select: none;
         }
 
@@ -170,7 +81,7 @@
         }
 
         .footer-p {
-            font-size: 0.9rem;
+            font-size: 14px;
             color: #a1a1a1;
             text-align: center;
         }
@@ -182,7 +93,7 @@
 
         .btn-f12 {
             border-radius: 1px;
-            padding: 0 0.1rem;
+            padding: 0 2px;
             cursor: pointer;
             color: #fff;
         }
@@ -192,7 +103,7 @@
             color: rgb(107, 107, 107);
         }
 
-        /*coffee cup - loading*/
+        /* coffee cup - loading */
         .coffee_cup {
             width: 20px;
             height: 24px;
@@ -285,24 +196,24 @@
             position: absolute;
             top: 0;
             left: 0;
-        }
-
-        @media screen and (max-width: 768px) {
-            img.topleft {
-                width: 162.5;
-                height: 163.5;
-                opacity: 0.2;
-            }
+            width: 20vw;
+            height: 20vw;
         }
 
         .uareawsome {
             opacity: 0;
-            font-size: 1px;
             user-select: none;
             position: absolute;
             bottom: 0;
             right: 0;
             cursor: pointer;
+        }
+
+        /* 移动端 */
+        @media screen and (max-width: 768px) {
+            img.topleft {
+                opacity: 0.2;
+            }
         }
     </style>
 </header>
@@ -313,7 +224,7 @@
         <h3 class="principle">生命以负<span title='傲慢、贪婪、色欲、嫉妒、暴食、愤怒、怠惰'>熵</span>为食
             <img id='rotate' src="./assets/img/sun.svg" width="50" height="50" title='愿你今日美好' type="image/svg+xml" />
         </h3>
-        <img src="./assets/img/tree.png" alt="" width="385" height="387" class="topleft">
+        <img src="./assets/img/tree.png" alt="" class="topleft">
         <div class="content-wrap">
             <div class="intro">
                 <p class="intro-line"><b>你好!</b> 遇见即是缘起，很高兴能遇见你！你可以叫我 —— <b>阿燃</b>！<span
