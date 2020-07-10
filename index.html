@@ -209,6 +209,25 @@
             cursor: pointer;
         }
 
+        .translate {
+            color: #999;
+            font-size: 14px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: right;
+        }
+
+        .slideTip,
+        .slideTip1 {
+            color: rgb(163, 108, 6);
+            margin-top: 15px;
+            box-shadow: 0px 0px 5px rgb(163, 108, 6);
+            padding: 0 5px;
+            border-radius: 2px;
+        }
+
         /* 移动端 */
         @media screen and (max-width: 768px) {
             img.topleft {
@@ -221,44 +240,97 @@
 <body>
     <div class="coffee_cup loader"></div>
     <div class="home" style="display: none;">
+        <!-- slogan -->
         <h3 class="principle">生命以负<span title='傲慢、贪婪、色欲、嫉妒、暴食、愤怒、怠惰'>熵</span>为食
             <img id='rotate' src="./assets/img/sun.svg" width="50" height="50" title='愿你今日美好' type="image/svg+xml" />
         </h3>
         <img src="./assets/img/tree.png" alt="" class="topleft">
+        <!-- 内容 -->
         <div class="content-wrap">
             <div class="intro">
-                <p class="intro-line"><b>你好!</b> 遇见即是缘起，很高兴能遇见你！你可以叫我 —— <b>阿燃</b>！<span
-                        style="font-size: 12px;color:#666">（AKA：<a title="吾本是58粉，后亦是风尘四侠粉，社会我瓜哥，人狠话不多，懂的都懂"
-                            target="_blank" href="https://juejin.im/user/5bcd67a8e51d457947022910">掘金安东尼</a>）</span></p>
-                <p class="intro-line">我是一名<span title="不卑不亢 砥砺前行"><a target="_blank"
-                            href='https://www.zhihu.com/question/19589966'>前端开发工程师</a></span>。
+                <div class="chinese-wrapper">
+                    <p class="intro-line"><b>你好！</b> 遇见即是缘起，很高兴能遇见你！你可以叫我 —— <b>阿燃</b>！<span
+                            style="font-size: 12px;color:#666">（AKA：<a title="吾本是58粉，后亦是风尘四侠粉，社会我瓜哥，人狠话不多，懂的都懂"
+                                target="_blank" href="https://juejin.im/user/5bcd67a8e51d457947022910">掘金安东尼</a>）</span>
+                    </p>
+                    <p class="intro-line">我是一名<span title="不卑不亢 砥砺前行"><a target="_blank"
+                                href='https://www.zhihu.com/question/19589966'>前端开发工程师</a></span>。
+                    </p>
+                    <p class="intro-line">我使用 GitHub Page 托管 <span title="点它！"><a target="_blank"
+                                href='https://tuaran.github.io'><b style="color: #555">我的博客</b></a></span>，用于分享交流技术与生活。
+                    </p>
+                    <p class="intro-line">非常欢迎你能到我的<span title="毕竟面向 star 编程（手动狗头）"><a target="_blank"
+                                href="https://github.com/TUARAN">仓库主页</a></span>互相 follow !<b>⭐star⭐</b>！
+                    </p>
+                    <p class="intro-line">你也可在这些地方找到我：<span title='I love "juejin.im".'><a target="_blank"
+                                href="https://juejin.im/user/5bcd67a8e51d457947022910">掘金</a></span>、<span
+                            title="中国最大程序员社区，就是这么刚！"><a target="_blank"
+                                href="https://blog.csdn.net/qq_37969897/">CSDN</a></span>、<span
+                            title="人在蒙古、刚下航母、麻省毕业、长相彦祖"><a target="_blank"
+                                href="https://www.zhihu.com/people/tu-tu-tu-tu-tu-25-1">知乎</a></span>、<span
+                            title="心有猛虎 细嗅蔷薇"><a target="_blank"
+                                href="https://www.huxiu.com/member/2412214.html">虎嗅</a></span>。我将在这些平台保持活跃，你愿意与我同行吗？</p>
+                    <p class="intro-line surprise"><span title="F12 / Ctrl+Shift+C" class="btn-f12">F12</span>
+                        有彩蛋!
+                    </p>
+                    <p class="intro-line"></p>
+                    <p class="intro-line">同时，我在自己的 ECS 上搭建了一些 web 服务。致力于做<b>有用的</b>个人站点！以下：</p>
+                    <p class="intro-line"><span title="这是一个前端开发在学习路上对浏览器书签收纳整理的网站！">1. 前端书签网 <a target="_blank"
+                                href="http://febm.tuaran.site">febm.tuaran.site</a>；</span></p>
+                    <p class="intro-line"><span title="你可以在上面记录你的每天，每天都立Flag！O(∩_∩)O">2. 每日一立 <a target="_blank"
+                                href="http://ddup.tuaran.site">ddup.tuaran.site</a>；</span></p>
+                    <p class="intro-line"><span title="免费的图床服务！你要的图床功能，我都可以有！">3. 图床服务 <a target="_blank"
+                                href="http://120.78.205.57:3000">tarsFigureBed</a>；</span></p>
+                    <p class="intro-line"></p>
+                </div>
+                <div class="english-wrapper" style="display:none;">
+                    <p class="intro-line"><b> HELLO! </b>Meeting is fate, it’s nice to meet you!you can call me
+                        <b>Aran</b>[ˈerən]!</p>
+                    <p class="intro-line">
+                        I am a<span title="Be neither humble nor hyperactive"><span>
+                                Front-end development engineer</span></span>.
+                    </p>
+                    <p class="intro-line">I use <i>GitHub Page</i> to host my blog <span title=""><a target="_blank"
+                                href='https://tuaran.github.io'><b style="color: #555">my blog</b></a></span>.
+                        to share technology and life.
+                    </p>
+                    <p class="intro-line">You are very welcome to go to my<span title=""><a target="_blank"
+                                href="https://github.com/TUARAN"> homepage </a></span>to follow each other
+                        and <b>⭐star⭐</b>!
+                    </p>
+                    <p class="intro-line">
+                        You can also find me in these places:<span title=""><a target="_blank"
+                                href="https://www.youtube.com/channel/UCAGh-sfG2kwLq36m34y3O1w?view_as=subscriber">youtube</a></span>,<span
+                            title=""><a target="_blank" href="https://twitter.com/tarsixseveneig1">twitter</a></span>.
+                    </p>
+                    <p class="intro-line">I will remain active on these platforms. Will you walk with me?</p>
+                    <p class="intro-line surprise"><span title="F12 / Ctrl+Shift+C" class="btn-f12">F12</span>
+                        There is Easter eggs!
+                    </p>
+                    <p class="intro-line"></p>
+                    <p class="intro-line">At the same time, I built some web services on my ECS.
+                        Committed to being a<b> useful </b> personal site!</p>
+                    <p class="intro-line"><span title="">1. Frontend Bookmark: <a target="_blank"
+                                href="http://febm.tuaran.site">febm.tuaran.site</a>;</span></p>
+                    <p class="intro-line"><span title="">2. Record Daily: <a target="_blank"
+                                href="http://ddup.tuaran.site">ddup.tuaran.site</a>;</span></p>
+                    <p class="intro-line"><span title="">3.
+                            Picture Bed Service: <a target="_blank"
+                                href="http://120.78.205.57:3000">tarsFigureBed</a>;</span></p>
+                </div>
+                <!-- 右上角MENU -->
+                <p class="intro-line translate">
+                    <span title='摊牌了，不装了，F12有彩蛋' id='f12'> | F12 </span>
+                    <span id="toEnglish"> | Engilish | </span><span id="toChinese" style="display: none;"> | 中文 |
+                    </span>
+                    <br>
+                    <span class="slideTip" style="display: none;">控制台 Console 有彩蛋！</span>
+                    <br>
+                    <span class="slideTip1" style="display: none;">啥？不会浏览器调试？加我微信号 <span style="color: orange;">Ifuckinghigh</span>，手把手教你看~</span>
                 </p>
-                <p class="intro-line">我使用 GitHub Page 托管 <span title="点它！"><a target="_blank"
-                            href='https://tuaran.github.io'><b style="color: #555">我的博客</b></a></span>，用于分享交流技术与生活。</p>
-                <p class="intro-line">非常欢迎你能到我的<span title="毕竟面向 star 编程（手动狗头）"><a target="_blank"
-                            href="https://github.com/TUARAN">仓库主页</a></span>互相 follow !<b>⭐star⭐</b>！
-                </p>
-                <p class="intro-line">你也可在这些地方找到我：<span title='I love "juejin.im".'><a target="_blank"
-                            href="https://juejin.im/user/5bcd67a8e51d457947022910">掘金</a></span>、<span
-                        title="中国最大程序员社区，就是这么刚！"><a target="_blank"
-                            href="https://blog.csdn.net/qq_37969897/">CSDN</a></span>、<span
-                        title="人在蒙古、刚下航母、麻省毕业、长相彦祖"><a target="_blank"
-                            href="https://www.zhihu.com/people/tu-tu-tu-tu-tu-25-1">知乎</a></span>、<span
-                        title="心有猛虎 细嗅蔷薇"><a target="_blank"
-                            href="https://www.huxiu.com/member/2412214.html">虎嗅</a></span>。我将在这些平台保持活跃，你愿意与我同行吗？</p>
-                <p class="intro-line surprise"><span id='f12' title="F12 / Ctrl+Shift+C" class="btn-f12">F12</span> 有彩蛋!
-                </p>
-                <p class="intro-line"></p>
-                <p class="intro-line">同时，我在自己的 ECS 上搭建了一些 web 服务。致力于做<b>有用的</b>个人站点！以下：</p>
-                <p class="intro-line"><span title="这是一个前端开发在学习路上对浏览器书签收纳整理的网站！">1. 前端书签网 <a target="_blank"
-                            href="http://febm.tuaran.site">febm.tuaran.site</a>；</span></p>
-                <p class="intro-line"><span title="你可以在上面记录你的每天，每天都立Flag！O(∩_∩)O">2. 每日一立 <a target="_blank"
-                            href="http://ddup.tuaran.site">ddup.tuaran.site</a>；</span></p>
-                <p class="intro-line"><span title="免费的图床服务！你要的图床功能，我都可以有！">3. 图床服务 <a target="_blank"
-                            href="http://120.78.205.57:3000">tarsFigureBed</a>；</span></p>
             </div>
         </div>
-
+        <!-- 页脚 -->
         <div class="footer">
             <div class="footer-p beian">粤ICP备20050840号 <span>©2020</span></div>
             <div class="footer-p ">Statistic Analysis Power By <a class="bottom-link" target="_blank"
@@ -266,6 +338,7 @@
                     target="_blank" class="bottom-link" href='https://search.google.com/search-console'> Google Search
                     Console</a> | <a class="bottom-link" href="https://cloud.google.com">More Support</a></div>
         </div>
+        <!-- 右下角 -->
         <div class="footer-p uareawsome">
             <div id="resume" title="这都被你发现了，好啦，算你厉害！">| RESUME |</div>
         </div>
@@ -277,7 +350,7 @@
     var consoleImg = '%c' + ' '
     console.log(consoleImg,
         "padding:66px 88px;background:url('http://tuaran.site:3001/uploads/61dd3e7989a9f2af212818b1ae726f4d.jpg') no-repeat;background-size:contain;"
-        );
+    );
     console.log("2. Base📍：", "广州")
     console.log("3. 毕业院校🏫：", "华南师大")
     console.log("4. 我还关注👀：")
@@ -327,7 +400,33 @@
     }
     // 监听点击
     document.getElementById("f12").addEventListener("click", function () {
-        // TODO: JS 模拟按键
+        //  S 模拟按键 不能模拟打开控制台
+        var display = document.getElementsByClassName("slideTip")[0].style.display;
+        if (display == 'none') {
+            document.getElementsByClassName("slideTip")[0].style.display = "inline-block"
+        } else {
+            document.getElementsByClassName("slideTip")[0].style.display = "none"
+        }
+    }, false);
+    document.getElementsByClassName("slideTip")[0].addEventListener("click", function () {
+        var display = document.getElementsByClassName("slideTip1")[0].style.display;
+        if (display == 'none') {
+            document.getElementsByClassName("slideTip1")[0].style.display = "inline-block"
+        } else {
+            document.getElementsByClassName("slideTip1")[0].style.display = "none"
+        }
+    }, false);
+    document.getElementById("toEnglish").addEventListener("click", function () {
+        document.getElementsByClassName("chinese-wrapper")[0].style.display = "none"
+        document.getElementsByClassName("english-wrapper")[0].style.display = "block"
+        document.getElementById("toEnglish").style.display = "none"
+        document.getElementById("toChinese").style.display = "inline-block"
+    }, false);
+    document.getElementById("toChinese").addEventListener("click", function () {
+        document.getElementsByClassName("chinese-wrapper")[0].style.display = "block"
+        document.getElementsByClassName("english-wrapper")[0].style.display = "none"
+        document.getElementById("toEnglish").style.display = "inline-block"
+        document.getElementById("toChinese").style.display = "none"
     }, false);
     document.getElementById("resume").addEventListener("click", function () {
         window.open("/resume")

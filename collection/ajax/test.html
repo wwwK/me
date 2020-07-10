@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax请求本地json文件</title>
+</head>
+<body>
+<div id="test"></div>
+<script  src="jquery-2.2.1.min.js"></script>
+<script>
+    $(function(){
+        $.ajax({
+            //请求方式
+            type:"post",
+            //文件位置
+            url:"https://www.jiuweige.com/app/ajax/commend.php?action=chkword",
+            //返回数据格式为json,也可以是其他格式如
+            dataType: "json",
+            headers:{
+                'content-type':'application/x-www-form-urlencoded'
+            },
+            //请求成功后要执行的函数，拼接html
+            success: function(data){
+                var str="<ul>";
+                $.each(data.list[0].manage,function(i,n){
+                    str+="<li>"+n.tool+"</li>";
+                });
+                str+="</ul>";
+                $("div").append(str);
+            }
+        });
+    });
+</script>
+</body>
+</html>
