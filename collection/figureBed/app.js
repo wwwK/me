@@ -13,6 +13,7 @@ app.use(multerObj.any())
 
 // 允许直接访问静态文件
 app.use('/uploads', express.static('uploads'));
+app.use('/assets', express.static('assets'));
 
 app.get('/', (req, res, next) => {
     res.setHeader('Content-Type', 'text/html')

@@ -40,10 +40,15 @@
                 let resObj = JSON.parse(xhr.responseText).message;
                 let hostport = document.location.host; //ip:端口号
                 resObj && resObj.forEach(item => {
+                    var link=document.createElement("a")
+                    link.href='http://' + hostport +'/uploads/'+item;
+                    link.target="_blank";
+                    link.style.cursor='pointer'
                     var img = document.createElement("img");
                     img.src ='http://' + hostport +"/uploads/"+item;
+                    link.appendChild(img);
                     var li = document.createElement("li");
-                    li.appendChild(img);
+                    li.appendChild(link);
                     var minHeightUl = ulArr[0];
                     for (var j = 0; j < ulArr.length; j++) {
                         if (minHeightUl.offsetHeight > ulArr[j].offsetHeight) {
