@@ -1,6 +1,3 @@
-# me
-[buila a site all about "me"](https://tuaran.site)
-
 # 我的 web 应用
 
 * [tuaran.github.io](https://tuaran.github.io)
