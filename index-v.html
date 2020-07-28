@@ -19,312 +19,14 @@
         gtag('js', new Date());
         gtag('config', 'UA-171085431-1');
     </script>
-    <style>
-        /* 参考雅虎样式初始化 */
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            color: #555;
-            /* 掘金 */
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
-            background: #FDFDFD url(./assets/img/pattern.jpg) repeat-x;
-        }
-
-        a {
-            color: #555;
-            text-decoration: none;
-            padding-bottom: 2px;
-            border-bottom: 2px solid rgb(253, 234, 85)
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        img {
-            border: none;
-        }
-
-        .home {
-            display: flex;
-            height: 100vh;
-            flex-direction: column;
-            justify-content: space-around;
-            overflow-x: hidden;
-        }
-
-        .principle {
-            width: 100%;
-            margin: 0 auto;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .content-wrap {
-            max-width: 1200px;
-            min-height: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            z-index: 9;
-        }
-
-        .beian {
-            margin-bottom: 5px;
-        }
-
-        .footer-p {
-            font-size: 14px;
-            color: #a1a1a1;
-            text-align: center;
-        }
-
-        .btn-f12 {
-            border-radius: 1px;
-            padding: 0 2px;
-            cursor: pointer;
-            color: #fff;
-        }
-
-        .bottom-link {
-            border-bottom: none;
-            color: rgb(107, 107, 107);
-        }
-
-        /* coffee cup - loading */
-        .coffee_cup {
-            width: 20px;
-            height: 24px;
-            border: 1px #666 solid;
-            border-radius: 0px 0px 5px 5px;
-            position: relative;
-            margin: 36px auto;
-            position: absolute;
-            top: 35%;
-            margin-top: -12px;
-            left: 50%;
-            margin-left: -10px;
-        }
-
-        .coffee_cup:after,
-        .coffee_cup:before {
-            position: absolute;
-            content: "";
-        }
-
-        .coffee_cup:after {
-            width: 5px;
-            height: 12px;
-            border: 1px #fff solid;
-            border-left: none;
-            border-radius: 0px 20px 20px 0px;
-            left: 20px;
-        }
-
-        .coffee_cup:before {
-            width: 1px;
-            height: 6px;
-            background-color: #666;
-            top: -10px;
-            left: 4px;
-            box-shadow: 5px 0px 0px 0px #666,
-                5px -5px 0px 0px #666,
-                10px 0px 0px 0px #666;
-            -webkit-animation: steam 1s linear infinite alternate;
-            -moz-animation: steam 1s linear infinite alternate;
-            animation: steam 1s linear infinite alternate;
-        }
-
-        @-webkit-keyframes steam {
-            0% {
-                height: 0px;
-            }
-
-            100% {
-                height: 6px;
-            }
-        }
-
-        @-moz-keyframes steam {
-            0% {
-                height: 0px
-            }
-
-            100% {
-                height: 6px;
-            }
-        }
-
-        @keyframes steam {
-            0% {
-                height: 0px
-            }
-
-            100% {
-                height: 6px;
-            }
-        }
-
-        #rotate {
-            animation: spin 3s steps(24) infinite;
-            margin-left: 5px;
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        img.topleft {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 20vw;
-            height: 20vw;
-        }
-
-        .uareawsome {
-            opacity: 0;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            cursor: pointer;
-        }
-
-        .translate {
-            color: #999;
-            font-size: 14px;
-            cursor: pointer;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            text-align: right;
-        }
-
-        .slideTip {
-            color: rgb(163, 108, 6);
-            margin-top: 15px;
-            box-shadow: 0px 0px 5px rgb(163, 108, 6);
-            padding: 0 5px;
-            border-radius: 2px;
-            cursor: default;
-        }
-
-        .tip-span {
-            font-size: 0.8rem;
-            color: #999;
-        }
-
-        .bar-item {
-            box-shadow: -2px 2px 1px rgb(238, 173, 87);
-            margin-left: 50px;
-        }
-
-        .bar-item:nth-child(1) {
-            margin-left: 0px;
-        }
-
-        .bar-content {
-            box-shadow: 0px 0px 2px rgb(238, 173, 87);
-        }
-
-        .bc1,
-        .bc2 {
-            display: none;
-
-        }
-
-        .text {
-            font-size: 14px;
-        }
-
-        .item {
-            margin-bottom: 18px;
-        }
-
-        .clearfix:before,
-        .clearfix:after {
-            display: table;
-            content: "";
-        }
-
-        .clearfix:after {
-            clear: both
-        }
-
-        .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
-            color: rgba(242, 156, 43, 1);
-        }
-
-        .el-tabs--border-card>.el-tabs__header .el-tabs__item:not(.is-disabled):hover {
-            color: rgba(242, 156, 43, 1);
-        }
-
-        .el-button--text {
-            color: rgba(242, 156, 43, 1);
-        }
-
-        .el-button:focus,
-        .el-button:hover {
-            color: rgba(242, 156, 43, 1);
-        }
-
-        .el-tabs--border-card {
-            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
-            border: 1px solid #EBEEF5;
-        }
-
-        .tabs-box {
-            width: 700px;
-            min-height: 240px;
-            font-size: 14px;
-            letter-spacing: 1.1px;
-        }
-
-        .tabs-box p {
-            padding: 5px 10px;
-        }
-
-        /* 移动端 */
-        @media screen and (max-width: 768px) {
-            img.topleft {
-                opacity: 0.2;
-            }
-
-            #f12 {
-                display: none;
-            }
-
-            .footer {
-                display: none;
-            }
-
-            .home {
-                height: auto;
-            }
-
-            .tabs-box {
-                width: auto;
-                height: auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="./assets/css/index.css">
 </header>
 
 <body>
     <div id="app">
         <div v-if='loading' class="coffee_cup loader"></div>
         <div class="home" ref='home' style="display: none;">
-            <h3 class="principle">黃沙百戰穿金甲，不破樓蘭終不還<img id='rotate' src="./assets/img/sun.svg" width="50" height="50"
+            <h3 class="principle">黃沙百戰穿金甲 不破樓蘭終不還<img id='rotate' src="./assets/img/sun.svg" width="50" height="50"
                     title='愿你今日美好' type="image/svg+xml" /></h3>
             <div class="content-wrap">
                 <el-card class="box-card">
@@ -345,10 +47,32 @@
                 <el-tabs type="border-card" class="tabs-box">
                     <el-tab-pane label="资源">
                         <el-card class="box-card">
-                            <p>1. 如果你想加群？进击的前端群、程序员兼职群、程序员炒股群、微信读书群；</p>
-                            <p>2. 如果你想获取学习资源？前端学习资料、Vue 教学视频、Adobe 等破解软件；</p>
+                            <p>1. 如果你想加群？
+                                <el-popover placement="top-start" width="200" trigger="hover">
+                                    <img src="../assets/img/jianzhi.png"></img>
+                                    <b class="cursor-p" slot="reference">程序员兼职群</b>
+                                </el-popover>
+                                、
+                                <el-popover placement="top-start" width="200" trigger="hover">
+                                    <img src="../assets/img/chaogu.png"></img>
+                                    <b class="cursor-p" slot="reference">程序员炒股群</b>
+                                </el-popover>
+                                、
+                                <el-tooltip placement="top" content='加微信号，拉你进群' effect="light">
+                                    <b class="cursor-p">进击的前端群</b>
+                                </el-tooltip>
+                                、
+                                <el-tooltip placement="top" content='加微信号，拉你进群' effect="light">
+                                    <b class="cursor-p">微信读书群</b>
+                                </el-tooltip>
+                            </p>
+                            <p>2. 如果你想获取学习资源？前端学习资料、Vue/Uniapp 教学视频、Adobe 破解软件等</p>
                             <p>3. 如果你有不错的项目想法？需要帮手？我就是你的资源！</p>
-                            <p>加微信号：<span style="color:rgb(51,140,98);user-select:text;"><i>Ifuckinghigh</i>
+                            <p>加微信号：<span style="color:rgb(51,140,98);user-select:text;">
+                                    <el-popover placement="top" width="200" trigger="hover">
+                                        <i class="cursor-p" slot="reference">Ifuckinghigh</i>
+                                        <img src="../assets/img/wx.png"></img>
+                                    </el-popover>
                                 </span><span class="tip-span">（公众号 <b>[</b> 突然不突然 <b>]</b> ，维护中~）</span></p>
                             <p></p>
                         </el-card>
@@ -372,12 +96,23 @@
                     </el-tab-pane>
                     <el-tab-pane label="近期计划">
                         <el-card class="box-card">
-                            <p>1. 个站优化，显示加群图片（2020.7.27）</p>
-                            <p>2. 掘金文章输出：拒绝 CV 系列之原型链相关（2020.7.29）</p>
-                            <p>3. 公众号基础功能初始化（2020.7.30）</p>
-                            <p>4. 个站功能新增：日历功能（待规划）</p>
-                            <p>5. 基于 Vue3 的后台管理系统模板-套娃（待规划）</p>
-                            <p>6. TS 系列学习（待规划）</p>
+                            <div style="overflow-y: auto;height: 165px;">
+                                <el-timeline>
+                                    <el-timeline-item v-for="(activity, index) in activities" :key="index"
+                                        :timestamp="activity.timestamp">
+                                        {{activity.content}}<span>{{activity.state}}</span>
+                                    </el-timeline-item>
+                                </el-timeline>
+                            </div>
+                        </el-card>
+                    </el-tab-pane>
+                    <el-tab-pane label="文章推荐">
+                        <el-card class="box-card">
+                            <div v-for="(o,i) in articleArr" :key="o" class="text item">
+                                {{i+1+'. '}}<a :href="o.link" target="_blank">{{o.item }}</a>
+                                <span class="statistic-span" v-if='o.view'>阅读：{{o.view}}</span><span
+                                    class="statistic-span" v-if='o.like'>点赞：{{o.like}}</span>
+                            </div>
                         </el-card>
                     </el-tab-pane>
                 </el-tabs>
@@ -393,9 +128,6 @@
         </div>
         <div class="page-absolute">
             <img src="./assets/img/tree.png" alt="" class="topleft">
-            <div class="footer-p uareawsome">
-                <div id="resume" title="这都被你发现了，好啦，算你厉害！">| RESUME |</div>
-            </div>
         </div>
     </div>
 </body>
@@ -498,6 +230,53 @@
                     }]
                 }
             ],
+            activities: [{
+                    content: '个站优化，显示加群图片',
+                    timestamp: '截至 2020.7.27',
+                    state: '（已实现）👌'
+                }, {
+                    content: '掘金文章输出：拒绝 CV 系列之原型链相关',
+                    timestamp: '截至 2020.7.29'
+                }, {
+                    content: '公众号基础功能初始化',
+                    timestamp: '截至 2020.7.30'
+                },
+                {
+                    content: '个站功能新增：日历功能',
+                    timestamp: '待规划'
+                },
+                {
+                    content: '基于 Vue3 的后台管理系统模板-套娃',
+                    timestamp: '待规划'
+                },
+                {
+                    content: 'TS 系列学习',
+                    timestamp: '待规划'
+                }
+            ],
+            articleArr: [{
+                    item: "《Vue(v2.6.11)万行源码生啃，就硬刚！》",
+                    link: 'https://juejin.im/post/5f02f0bdf265da22ef7dbe5d',
+                    view: '2.5w+',
+                    like: '950+'
+                },
+                {
+                    item: "《内鬼消息：串联高频面试问题，值得一看！》",
+                    link: 'https://juejin.im/post/5f0aa7ac6fb9a07e654fa26b',
+                    view: '4.5k+',
+                    like: '70+'
+                },
+                {
+                    item: "《重读 ES6 标准入门（第3版）》",
+                    link: 'https://juejin.im/post/5d819151e51d4561e84fccc8',
+                    view: '1.6k+',
+                    like: ''
+                },
+                {
+                    item: " 更多尽在主页",
+                    link: 'https://juejin.im/user/5bcd67a8e51d457947022910/posts',
+                },
+            ]
         },
         created() {},
         mounted() {
@@ -511,6 +290,13 @@
                     message: 'RSS 订阅功能还在开发中',
                     type: 'warning'
                 });
+            },
+            showImgJZ() {
+                this.$notify({
+                    title: '扫码进群',
+                    dangerouslyUseHTMLString: true,
+                    message: '<img src="../assets/img/jianzhi.jpg" width="60px" height="80px">'
+                });
             }
         }
     })
@@ -518,10 +304,6 @@
 <script>
     console.log("----------------------- 更多相关 -----------------------\n诚邀志同道合者同行 ~\n")
     console.log("1. 加我微信号😁：", "Ifuckinghigh")
-    var consoleImg = '%c' + ' '
-    console.log(consoleImg,
-        "padding:66px 88px;background:url('http://tuaran.site:3001/uploads/61dd3e7989a9f2af212818b1ae726f4d.jpg') no-repeat;background-size:contain;"
-    );
     console.log("2. Base📍：", "广州")
     console.log("3. 毕业院校🏫：", "华师（SCNU）")
     console.log("4. 我还关注👀：")
