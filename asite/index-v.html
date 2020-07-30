@@ -10,6 +10,7 @@
     <meta name="google-site-verification" content="aMhxD50Qb1wfV9Zgn2oSp28v0A4n0HcKcm5avGZR8H4" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171085431-1"></script>
+    <!-- 信念产生行动 行动养成习惯 习惯生成性格 性格决定命运 -->
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -58,9 +59,10 @@
                                     <b class="cursor-p" slot="reference">程序员炒股群</b>
                                 </el-popover>
                                 、
-                                <el-tooltip placement="top" content='加微信号，拉你进群' effect="light">
-                                    <b class="cursor-p">进击的前端群</b>
-                                </el-tooltip>
+                                <el-popover placement="top-start" width="200" trigger="hover">
+                                    <img src="../assets/img/jjfe.png"></img>
+                                    <b class="cursor-p" slot="reference">进击的前端群</b>
+                                </el-popover>
                                 、
                                 <el-tooltip placement="top" content='加微信号，拉你进群' effect="light">
                                     <b class="cursor-p">微信读书群</b>
@@ -94,29 +96,67 @@
                             </p>
                         </el-card>
                     </el-tab-pane>
-                    <el-tab-pane label="近期计划">
-                        <el-card class="box-card">
-                            <div style="overflow-y: auto;height: 165px;">
-                                <el-timeline>
-                                    <el-timeline-item v-for="(activity, index) in activities" :key="index"
-                                        :timestamp="activity.timestamp">
-                                        {{activity.content}}<span>{{activity.state}}</span>
-                                    </el-timeline-item>
-                                </el-timeline>
-                            </div>
-                        </el-card>
-                    </el-tab-pane>
                     <el-tab-pane label="文章推荐">
                         <el-card class="box-card">
-                            <div v-for="(o,i) in articleArr" :key="o" class="text item">
+                            <div v-for="(o,i) in articleArr" :key="o.view" class="text item">
                                 {{i+1+'. '}}<a :href="o.link" target="_blank">{{o.item }}</a>
                                 <span class="statistic-span" v-if='o.view'>阅读：{{o.view}}</span><span
                                     class="statistic-span" v-if='o.like'>点赞：{{o.like}}</span>
                             </div>
                         </el-card>
                     </el-tab-pane>
+                    <el-tab-pane label="近期计划">
+                        <el-card class="box-card">
+                            <div>事不预，则不立。</div>
+                            <el-tag v-for="tag in planTags" type="warning" :key="tag.name" @click="showDrawer(tag.key)"
+                                style="margin-left: 16px;margin-top: 16px;cursor: pointer;">
+                                {{tag.name}}
+                            </el-tag>
+                        </el-card>
+                    </el-tab-pane>
                 </el-tabs>
             </div>
+            <el-drawer :title="drawerTitle" :visible.sync="drawer" :with-header="true">
+                <el-calendar>
+                    <!-- 这里使用的是 2.5 slot 语法，对于新项目请使用 2.6 slot 语法-->
+                    <template slot="dateCell" slot-scope="{date, data}">
+                        <p :class="data.isSelected ? 'is-selected' : ''">
+                            <el-badge v-if='pre[data.day.split("-").slice(1).join("-")]' is-dot class="item"
+                                type='warning'>
+                                <span style="padding-right:10px">{{ data.day.split('-').slice(1).join('-')}}</span>
+                            </el-badge>
+                            <span v-else>
+                                <span
+                                    style="padding-right:10px">{{ data.day.split('-').slice(1).join('-') }}</span></span>
+
+                            <span v-if="data.day.split('-').slice(1).join('-')==currentSelect">✔️</span>
+                            <span v-else>{{ data.isSelected ? '✔️' : ''}}</span>
+                        </p>
+                    </template>
+                </el-calendar>
+                <el-collapse v-model="activeNames">
+                    <el-collapse-item title=" 当日计划：" name="1">
+                        <el-card class="box-card">
+                            <div v-if='!pre[currentSelect]'>暂无记录</div>
+                            <div v-else>
+                                <div v-for="(o,index) in pre[currentSelect]" :key="o" class="text item">
+                                    {{index+1+'. '+o}}
+                                </div>
+                            </div>
+                        </el-card>
+                    </el-collapse-item>
+                    <el-collapse-item title=" 当日验收：" name="2">
+                        <el-card class="box-card">
+                            <div v-if='!check[currentSelect]'>暂无记录</div>
+                            <div v-else>
+                                <div v-for="(o,index) in check[currentSelect]" :key="o" class="text item">
+                                    {{index+1+'. '+o}}
+                                </div>
+                            </div>
+                        </el-card>
+                    </el-collapse-item>
+                </el-collapse>
+            </el-drawer>
             <div class="footer">
                 <div class="footer-p beian">粤ICP备20050840号 <span>©2020</span></div>
                 <div class="footer-p ">Statistic Analysis Power By <a class="bottom-link" target="_blank"
@@ -135,155 +175,70 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <!-- import JavaScript -->
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-<script>
+<!-- module -->
+<script type="module">
+    import {plan} from './assets/data/plan.js'
+    import {introText,articleArr,focusArr,performanceTime} from './assets/data/basic.js'
     var app = new Vue({
         el: '#app',
         data: {
             message: '遇见即是缘起，很高兴能遇见你！',
             loading: true,
-            introText: [{
-                    id: 1,
-                    text: [{
-                            l: '',
-                            t: '我是 —— '
-                        }, {
-                            l: 'https://juejin.im/user/5bcd67a8e51d457947022910',
-                            t: '掘金安东尼',
-                            s: "font-weight:700"
-                        },
-                        {
-                            l: '',
-                            t: '，一名',
-                        },
-                        {
-                            l: 'https://www.zhihu.com/question/19589966',
-                            t: ' 前端开发工程师 ',
-                        }
-                    ]
-                },
-                {
-                    id: 2,
-                    text: [{
-                        l: '',
-                        t: '我使用 GitHub Page 托管'
-                    }, {
-                        l: 'https://tuaran.github.io',
-                        t: ' 我的博客 ',
-                    }, {
-                        t: '用于分享交流技术与生活'
-                    }]
-                },
-                {
-                    id: 3,
-                    text: [{
-                        l: '',
-                        t: '非常欢迎你能到我的'
-                    }, {
-                        l: 'https://github.com/TUARAN',
-                        t: ' 仓库主页 ',
-                    }, {
-                        t: '互相 follow !⭐star⭐！'
-                    }]
-                },
-                {
-                    id: 4,
-                    text: [{
-                            l: '',
-                            t: '你也可在这些地方找到我：'
-                        }, {
-                            l: 'https://juejin.im/user/5bcd67a8e51d457947022910',
-                            t: ' 掘金 ',
-                        },
-                        {
-                            t: '、',
-                        },
-                        {
-                            l: 'https://blog.csdn.net/qq_37969897/',
-                            t: ' 知乎 ',
-                        }, {
-                            t: '、',
-                        },
-
-                        {
-                            l: 'https://www.zhihu.com/people/tu-tu-tu-tu-tu-25-1',
-                            t: ' CSDN ',
-                        }, {
-                            t: '、',
-                        },
-                        {
-                            l: 'https://www.huxiu.com/member/2412214.html',
-                            t: ' 虎嗅 ',
-                        },
-                        {
-                            t: '、',
-                        }, {
-                            l: 'https://leetcode-cn.com/u/tuaran/',
-                            t: '力扣',
-                        }
-                    ]
-                },
-                {
-                    id: 5,
-                    text: [{
-                        l: '',
-                        t: '我将努力在这些平台保持活跃，你愿意与我同行吗？',
-                    }]
-                }
+            drawer: false,
+            drawerTitle: '',
+            activeNames: ['1', '2'], // 抽屉折叠展板
+            introText:introText, // 介绍文本
+            articleArr:articleArr ,// 推荐文章
+            planTags: [{
+                name: '个站建设',
+                key: 'site'
+            }, {
+                name: '撰文输出',
+                key: 'write'
+            },{
+                name: '往死里学',
+                key: 'study'
+            },
+            {
+                name: '自律生活',
+                key: 'life'
+            }, {
+                name: '读万卷书',
+                key: 'read'
+            },
+            {
+                name: '行万里路',
+                key: 'walk'
+            }
             ],
-            activities: [{
-                    content: '个站优化，显示加群图片',
-                    timestamp: '截至 2020.7.27',
-                    state: '（已实现）👌'
-                }, {
-                    content: '掘金文章输出：拒绝 CV 系列之原型链相关',
-                    timestamp: '截至 2020.7.29'
-                }, {
-                    content: '公众号基础功能初始化',
-                    timestamp: '截至 2020.7.30'
-                },
-                {
-                    content: '个站功能新增：日历功能',
-                    timestamp: '待规划'
-                },
-                {
-                    content: '基于 Vue3 的后台管理系统模板-套娃',
-                    timestamp: '待规划'
-                },
-                {
-                    content: 'TS 系列学习',
-                    timestamp: '待规划'
-                }
-            ],
-            articleArr: [{
-                    item: "《Vue(v2.6.11)万行源码生啃，就硬刚！》",
-                    link: 'https://juejin.im/post/5f02f0bdf265da22ef7dbe5d',
-                    view: '2.5w+',
-                    like: '950+'
-                },
-                {
-                    item: "《内鬼消息：串联高频面试问题，值得一看！》",
-                    link: 'https://juejin.im/post/5f0aa7ac6fb9a07e654fa26b',
-                    view: '4.5k+',
-                    like: '70+'
-                },
-                {
-                    item: "《重读 ES6 标准入门（第3版）》",
-                    link: 'https://juejin.im/post/5d819151e51d4561e84fccc8',
-                    view: '1.6k+',
-                    like: ''
-                },
-                {
-                    item: " 更多尽在主页",
-                    link: 'https://juejin.im/user/5bcd67a8e51d457947022910/posts',
-                },
-            ]
+            currentSelect: '',
+            pre:{},
+            check:{},
         },
         created() {},
+        computed: {},
+        watched: {
+
+        },
         mounted() {
             this.loading = false;
-            console.log(this.$refs.home.style.display = 'flex')
+            this.$refs.home.style.display = 'flex'
+            this.todayMY()
+            this.handleConsole()
         },
         methods: {
+            todayMY(){
+                // 计算今天：月-日
+            let nowMonth = new Date().getMonth() + 1;
+            let strDate = new Date().getDate();
+            if (nowMonth >= 1 && nowMonth <= 9) {
+                nowMonth = "0" + nowMonth;
+            }
+            if (strDate >= 0 && strDate <= 9) {
+                strDate = "0" + strDate;
+            }
+            this.currentSelect=nowMonth+'-'+strDate
+            },
             handleRss() {
                 this.$notify({
                     title: 'Oops',
@@ -297,51 +252,49 @@
                     dangerouslyUseHTMLString: true,
                     message: '<img src="../assets/img/jianzhi.jpg" width="60px" height="80px">'
                 });
+            },
+            showDrawer(key) {
+                // SHOW SLIDE DRAWE
+                this.drawer = true;
+                this.drawerTitle = this.planTags.find(item => item.key == key).name;
+                // PRE AND CHECK
+                this.pre=plan[key].pre
+                this.check=plan[key].check
+                this.$nextTick(() => {
+                    // FIXME: 初始化绿勾
+                    
+
+                    // 监听切换日期
+                    let currentDate = document.querySelector('.el-calendar-table tbody');
+                    currentDate.addEventListener('click', () => {
+                        let date = document.querySelector('.current.is-selected').textContent
+                            .trim().substring(0, 5);
+                        this.currentSelect = date
+                    })
+                    // 监听切换上下月
+                    let toggleMonth = document.querySelector('.el-calendar__button-group .el-button-group');
+                    toggleMonth.addEventListener('click', () => {
+                        let date = document.querySelector('.current.is-selected').textContent
+                            .trim().substring(0, 5);
+                        this.currentSelect = date
+                    })
+                    
+                })
+            },
+            handleConsole(){
+                console.log("----------------------- 更多相关 -----------------------\n诚邀志同道合者同行 ~\n")
+                console.log("Base📍：", "广州")
+                console.log("毕业院校🏫：", "华师（SCNU）")
+                console.log("我还关注👀：")
+                console.table(focusArr);
+                console.log("----------------------- 网站相关 -----------------------")
+                console.log("性能监控📡：")
+                console.table(performanceTime)
+                console.log("阿里云推荐码🐎：https://www.aliyun.com/minisite/goods?userCode=nk1m1mfv");
+                console.log("备案变更🔒base64：REhIOTMz");
             }
         }
     })
-</script>
-<script>
-    console.log("----------------------- 更多相关 -----------------------\n诚邀志同道合者同行 ~\n")
-    console.log("1. 加我微信号😁：", "Ifuckinghigh")
-    console.log("2. Base📍：", "广州")
-    console.log("3. 毕业院校🏫：", "华师（SCNU）")
-    console.log("4. 我还关注👀：")
-    const focusArr = [{
-            "关注": '科哲神学',
-            "备注": "feat.量子力学",
-        },
-        {
-            "关注": '电影解说',
-            "备注": "也想当个电影解说的 youtuber",
-        },
-        {
-            "关注": '微信读书',
-            "备注": "向五百小时进发！",
-        },
-        {
-            "关注": '股票',
-            "备注": "A股虐我千百遍，我待A股如初恋",
-        },
-        {
-            "关注": '壁纸制作',
-            "备注": "https://wallhaven.cc/user/paperhawen"
-        },
-
-        {
-            "关注": 'JRS',
-            "备注": "玩梗别认真"
-        },
-        {
-            "关注": '祖安狂人',
-            "备注": "我亚索真的挺6"
-        },
-    ];
-    console.table(focusArr);
-    console.log("----------------------- 网站相关 -----------------------")
-    console.log("1. loading and network information🔍:", chrome.loadTimes())
-    console.log("2. 阿里云推荐码🐎：https://www.aliyun.com/minisite/goods?userCode=nk1m1mfv");
-    console.log("3. 备案变更🔒base64：REhIOTMz");
 </script>
 
 </html>

@@ -1,0 +1,24 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <div>这是 A 页面</div>
+    <button onclick="toB()">点击打开 B 页面</button>
+    <script>
+        window.name = 'A' // 设置页面名
+        function toB() {
+            window.open("B.html", "B") // 打开新页面并设置页面名
+        }
+        window.addEventListener('hashchange', function () {// 监听 hash
+            alert(window.location.hash)
+        }, false);
+        // window.addEventListener("storage", function (e) {// 监听 storage
+        //     alert(e.newValue);
+        // });
+    </script>
+
+</body>
+
+</html>

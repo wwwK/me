@@ -1,0 +1,19 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <div>这是 B 页面</div>
+    <script>
+        window.onunload = function (e) {
+            window.open('A.html#close', "A") // url 挂参 跳回到已打开的 A 页面
+
+            // localStorage.setItem("name","close");
+
+        }
+        
+    </script>
+</body>
+
+</html>
