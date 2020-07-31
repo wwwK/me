@@ -1,3 +1,18 @@
+// feat - 新功能 feature
+// fix - 修复 bug
+// docs - 文档注释
+// style - 代码格式
+// refactor - 重构、优化
+// perf - 性能优化
+// test - 增加测试
+// chore - 构建过程或辅助工具的变动
+// revert - 回退
+// build - 打包
+
+// done - 完成
+// delay - 推迟
+// fail - 失败
+
 const plan = {
     site: {
         pre: {
@@ -8,10 +23,14 @@ const plan = {
                 "feat: 新增侧边抽屉展示日历功能",
                 "refactor: 优化“近期计划”Tab栏目"
             ],
+            '08-01': [
+                "feat: 新增文章滚动推荐",
+            ]
         },
         check: {
             '07-30': [
-                "done: 新增侧边抽屉展示日历功能"
+                "done: 完成新增侧边抽屉展示日历功能",
+                "done: 完成优化“近期计划”Tab栏目"
             ]
         }
     },
@@ -44,9 +63,16 @@ const plan = {
         pre: {
             '07-30': [
                 "init: 公众号基础功能初始化"
+            ],
+            '08-02': [
+                "init: 公众号基础介绍，热点文章搬运"
             ]
         },
-        check: {}
+        check: {
+            '07-30': [
+                "fail：时间用于个站维护"
+            ]
+        }
     },
     read: {
         pre: {},
@@ -57,4 +83,6 @@ const plan = {
         check: {}
     },
 }
-export {plan}
+export {
+    plan
+}

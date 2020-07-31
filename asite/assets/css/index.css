@@ -221,7 +221,7 @@
      margin-bottom: 18px;
  }
 
- .el-badge.item{
+ .el-badge.item {
      margin-bottom: 0px;
  }
 
@@ -333,6 +333,6 @@
      }
 
      .el-drawer__open .el-drawer.rtl {
-         width: 100%!important;
+         width: 100% !important;
      }
  }

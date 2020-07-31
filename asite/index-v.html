@@ -47,20 +47,20 @@
                 <br>
                 <el-tabs type="border-card" class="tabs-box">
                     <el-tab-pane label="资源">
-                        <el-card class="box-card">
+                        <el-card class="box-card" style="min-height: 208px;line-height: 24px;">
                             <p>1. 如果你想加群？
                                 <el-popover placement="top-start" width="200" trigger="hover">
-                                    <img src="../assets/img/jianzhi.png"></img>
+                                    <img src="./assets/img/jianzhi.png"></img>
                                     <b class="cursor-p" slot="reference">程序员兼职群</b>
                                 </el-popover>
                                 、
                                 <el-popover placement="top-start" width="200" trigger="hover">
-                                    <img src="../assets/img/chaogu.png"></img>
+                                    <img src="./assets/img/chaogu.png"></img>
                                     <b class="cursor-p" slot="reference">程序员炒股群</b>
                                 </el-popover>
                                 、
                                 <el-popover placement="top-start" width="200" trigger="hover">
-                                    <img src="../assets/img/jjfe.png"></img>
+                                    <img src="./assets/img/jjfe.png"></img>
                                     <b class="cursor-p" slot="reference">进击的前端群</b>
                                 </el-popover>
                                 、
@@ -73,15 +73,14 @@
                             <p>加微信号：<span style="color:rgb(51,140,98);user-select:text;">
                                     <el-popover placement="top" width="200" trigger="hover">
                                         <i class="cursor-p" slot="reference">Ifuckinghigh</i>
-                                        <img src="../assets/img/wx.png"></img>
+                                        <img src="./assets/img/wx.png"></img>
                                     </el-popover>
                                 </span><span class="tip-span">（公众号 <b>[</b> 突然不突然 <b>]</b> ，维护中~）</span></p>
                             <p></p>
                         </el-card>
                     </el-tab-pane>
                     <el-tab-pane label="项目">
-                        <el-card class="box-card">
-                            <!-- <p>我在自己的 ECS 上搭建了一些 web 服务。致力于做有用的个人站点！</p> -->
+                        <el-card class="box-card" style="min-height: 208px;line-height: 24px;">
                             <p><span title="这是一个前端开发在学习路上对浏览器书签收纳整理的网站！">1. 前端书签网 <a target="_blank"
                                         href="http://febm.tuaran.site">febm.tuaran.site</a>；<span
                                         class="tip-span">（前端书签集大成者，持续维护）</span></span></p>
@@ -97,7 +96,7 @@
                         </el-card>
                     </el-tab-pane>
                     <el-tab-pane label="文章推荐">
-                        <el-card class="box-card">
+                        <el-card class="box-card" style="min-height: 208px;line-height: 24px;">
                             <div v-for="(o,i) in articleArr" :key="o.view" class="text item">
                                 {{i+1+'. '}}<a :href="o.link" target="_blank">{{o.item }}</a>
                                 <span class="statistic-span" v-if='o.view'>阅读：{{o.view}}</span><span
@@ -106,10 +105,9 @@
                         </el-card>
                     </el-tab-pane>
                     <el-tab-pane label="近期计划">
-                        <el-card class="box-card">
-                            <div>事不预，则不立。</div>
-                            <el-tag v-for="tag in planTags" type="warning" :key="tag.name" @click="showDrawer(tag.key)"
-                                style="margin-left: 16px;margin-top: 16px;cursor: pointer;">
+                        <el-card class="box-card" style="min-height: 208px;line-height: 24px;">
+                            <el-tag @click="showDrawer(tag.key)" type="warning" v-for="tag in planTags" :key="tag.name"
+                                style="margin:5px 10px;cursor: pointer;">
                                 {{tag.name}}
                             </el-tag>
                         </el-card>
@@ -118,7 +116,6 @@
             </div>
             <el-drawer :title="drawerTitle" :visible.sync="drawer" :with-header="true">
                 <el-calendar>
-                    <!-- 这里使用的是 2.5 slot 语法，对于新项目请使用 2.6 slot 语法-->
                     <template slot="dateCell" slot-scope="{date, data}">
                         <p :class="data.isSelected ? 'is-selected' : ''">
                             <el-badge v-if='pre[data.day.split("-").slice(1).join("-")]' is-dot class="item"
@@ -167,7 +164,6 @@
             </div>
         </div>
         <div class="page-absolute">
-            <img src="./assets/img/tree.png" alt="" class="topleft">
         </div>
     </div>
 </body>
@@ -192,17 +188,20 @@
             planTags: [{
                 name: '个站建设',
                 key: 'site'
-            }, {
+            }, 
+            {
                 name: '撰文输出',
                 key: 'write'
-            },{
-                name: '往死里学',
+            },
+            {
+                name: '学无止境',
                 key: 'study'
             },
             {
-                name: '自律生活',
+                name: '生活点滴',
                 key: 'life'
-            }, {
+            },
+            {
                 name: '读万卷书',
                 key: 'read'
             },
@@ -250,7 +249,7 @@
                 this.$notify({
                     title: '扫码进群',
                     dangerouslyUseHTMLString: true,
-                    message: '<img src="../assets/img/jianzhi.jpg" width="60px" height="80px">'
+                    message: '<img src="./assets/img/jianzhi.jpg" width="60px" height="80px">'
                 });
             },
             showDrawer(key) {
