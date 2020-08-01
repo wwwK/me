@@ -96,11 +96,15 @@
                         </el-card>
                     </el-tab-pane>
                     <el-tab-pane label="文章推荐">
-                        <el-card class="box-card" style="min-height: 208px;line-height: 24px;">
-                            <div v-for="(o,i) in articleArr" :key="o.view" class="text item">
-                                {{i+1+'. '}}<a :href="o.link" target="_blank">{{o.item }}</a>
-                                <span class="statistic-span" v-if='o.view'>阅读：{{o.view}}</span><span
-                                    class="statistic-span" v-if='o.like'>点赞：{{o.like}}</span>
+                        <el-card class="box-card scroll-wrap" style="min-height: 208px;line-height: 24px;">
+                            <!-- <a href='https://juejin.im/user/5bcd67a8e51d457947022910/posts'>更多尽在主页</a> -->
+                            <div class="scroll-content" :style="{ top,transition }">
+                                <div v-for="(o,i) in articleArr" :key="o.item" class="text item"
+                                    style="white-space: nowrap;">
+                                    <a :href="o.link" target="_blank">{{o.item }}</a>
+                                    <span class="statistic-span" v-if='o.view'>阅读：{{o.view}}</span><span
+                                        class="statistic-span" v-if='o.like'>点赞：{{o.like}}</span>
+                                </div>
                             </div>
                         </el-card>
                     </el-tab-pane>
@@ -167,6 +171,16 @@
         </div>
     </div>
 </body>
+<style>
+    .scroll-wrap {
+        height: 220px;
+        overflow: hidden;
+    }
+
+    .scroll-content {
+        position: relative;
+    }
+</style>
 <!-- import Vue before Element -->
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <!-- import JavaScript -->
@@ -213,9 +227,17 @@
             currentSelect: '',
             pre:{},
             check:{},
+            activeIndex: 0
         },
         created() {},
-        computed: {},
+        computed: {
+            top() {
+                return - this.activeIndex * 80 + 'px';
+            },
+            transition() {
+                return this.activeIndex === 0 ? 'none' : 'top 10s';
+            }
+        },
         watched: {
 
         },
@@ -224,8 +246,24 @@
             this.$refs.home.style.display = 'flex'
             this.todayMY()
             this.handleConsole()
+            this.scrollArticle()
         },
         methods: {
+            scrollArticle(){
+            // 滚动显示文章
+            setInterval(_ => {
+                        if(this.activeIndex===0){
+                            
+                            this.activeIndex =1; // 上移
+                        }else{
+                            
+                            let temp=this.articleArr[0]
+                            this.articleArr.splice(0,1)// 删除第一个
+                            this.articleArr.push(temp)// 移到队尾
+                            this.activeIndex=0
+                        }
+                }, 3000);
+            },
             todayMY(){
                 // 计算今天：月-日
             let nowMonth = new Date().getMonth() + 1;
