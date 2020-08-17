@@ -1,179 +1,11 @@
-<html>
-<header>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TUARAN</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <!-- google search console -->
-    <meta name="google-site-verification" content="aMhxD50Qb1wfV9Zgn2oSp28v0A4n0HcKcm5avGZR8H4" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171085431-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-171085431-1');
-    </script>
-    <style>
-        /* 参考雅虎样式初始化 */
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            color: #555;
-            /* 掘金 */
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
-            background: #FDFDFD url(./assets/img/pattern.jpg) repeat-x;
-        }
-
-        a {
-            color: #555;
-            text-decoration: none;
-            border-bottom: 2px solid yellow;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        img {
-            border: none;
-        }
-
-        .home {
-            display: flex;
-            height: 100vh;
-            flex-direction: column;
-            justify-content: space-around;
-            overflow-x: hidden;
-        }
-
-        .principle {
-            width: 100%;
-            margin: 0 auto;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .content-wrap {
-            max-width: 1200px;
-            margin: 0 auto;
-            height: 550px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            z-index: 9;
-        }
-
-        .intro-line {
-            padding: 5px 10px;
-            user-select: none;
-        }
-
-        .beian {
-            margin-bottom: 5px;
-        }
-
-        .footer-p {
-            font-size: 14px;
-            color: #a1a1a1;
-            text-align: center;
-        }
-
-        .btn-f12 {
-            border-radius: 1px;
-            padding: 0 2px;
-            cursor: pointer;
-            color: #fff;
-        }
-
-        .bottom-link {
-            border-bottom: none;
-            color: rgb(107, 107, 107);
-        }
-
-        /* coffee cup - loading */
-        .coffee_cup {
-            width: 20px;
-            height: 24px;
-            border: 1px #666 solid;
-            border-radius: 0px 0px 5px 5px;
-            position: relative;
-            margin: 36px auto;
-            position: absolute;
-            top: 35%;
-            margin-top: -12px;
-            left: 50%;
-            margin-left: -10px;
-        }
-
-        .coffee_cup:after,
-        .coffee_cup:before {
-            position: absolute;
-            content: "";
-        }
-
-        .coffee_cup:after {
-            width: 5px;
-            height: 12px;
-            border: 1px #fff solid;
-            border-left: none;
-            border-radius: 0px 20px 20px 0px;
-            left: 20px;
-        }
-
-        .coffee_cup:before {
-            width: 1px;
-            height: 6px;
-            background-color: #666;
-            top: -10px;
-            left: 4px;
-            box-shadow: 5px 0px 0px 0px #666,
-                5px -5px 0px 0px #666,
-                10px 0px 0px 0px #666;
-            -webkit-animation: steam 1s linear infinite alternate;
-            -moz-animation: steam 1s linear infinite alternate;
-            animation: steam 1s linear infinite alternate;
-        }
-
-        @-webkit-keyframes steam {
-            0% {
-                height: 0px;
-            }
-
-            100% {
-                height: 6px;
-            }
-        }
-
-        @-moz-keyframes steam {
-            0% {
-                height: 0px
-            }
-
-            100% {
-                height: 6px;
-            }
-        }
-
-        @keyframes steam {
-            0% {
-                height: 0px
-            }
-
-            100% {
-                height: 6px;
-            }
-        }
-
+   <html>
+    <head>
+        <title>TUARAN</title>
+        <style>
         #rotate {
-            animation: spin 3s steps(24) infinite;
+            animation: spin 6s steps(36) infinite;
             margin-left: 5px;
+            margin-bottom: 50px;
         }
 
         @keyframes spin {
@@ -185,268 +17,107 @@
                 transform: rotate(360deg);
             }
         }
+        </style>    
+    </head>
+   <body>
+       <nav class="nav">
+           <input type="checkbox" class="nav__cb" id="menu-cb" />
+           <div class="nav__content">
+               <ul class="nav__items">
+                   <li class="nav__item">
+                       <span class="nav__item-text">
+                           Home
+                       </span>
+                   </li>
+                   <li class="nav__item">
+                       <span class="nav__item-text">
+                           Works
+                       </span>
+                   </li>
+                   <li class="nav__item">
+                       <span class="nav__item-text">
+                           About
+                       </span>
+                   </li>
+                   <li class="nav__item">
+                       <span class="nav__item-text">
+                           Contact
+                       </span>
+                   </li>
+               </ul>
+           </div>
+           <label class="nav__btn" for="menu-cb"></label>
+       </nav>
+       <div class="sun"><img id='rotate'src='../assets/img/sun.svg' style="width:15vmin;height:15vmin"  title='愿你今日美好' type="image/svg+xml" />
+       </div>
+       <div class="husky">
+           <div class="mane">
+               <div class="coat"></div>
+           </div>
+           <div class="body">
+               <div class="head">
+                   <div class="ear"></div>
+                   <div class="ear"></div>
+                   <div class="face">
+                       <div class="eye"></div>
+                       <div class="eye"></div>
+                       <div class="nose"></div>
+                       <div class="mouth">
+                           <div class="lips"></div>
+                           <div class="tongue"></div>
+                       </div>
+                   </div>
+               </div>
+               <div class="torso"></div>
+           </div>
+           <div class="legs">
+               <div class="front-legs">
+                   <div class="leg"></div>
+                   <div class="leg"></div>
+               </div>
+               <div class="hind-leg">
+               </div>
+           </div>
+           <div class="tail">
+               <div class="tail">
+                   <div class="tail">
+                       <div class="tail">
+                           <div class="tail">
+                               <div class="tail">
+                                   <div class="tail"></div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
 
-        img.topleft {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 20vw;
-            height: 20vw;
-        }
+       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position:absolute">
+           <defs>
+               <filter id="squiggly-0">
+                   <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0" />
+                   <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="2" />
+               </filter>
+               <filter id="squiggly-1">
+                   <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1" />
+                   <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+               </filter>
 
-        .uareawsome {
-            opacity: 0;
-            user-select: none;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            cursor: pointer;
-        }
+               <filter id="squiggly-2">
+                   <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2" />
+                   <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+               </filter>
+               <filter id="squiggly-3">
+                   <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3" />
+                   <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+               </filter>
 
-        .translate {
-            color: #999;
-            font-size: 14px;
-            cursor: pointer;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            text-align: right;
-        }
-
-        .slideTip {
-            color: rgb(163, 108, 6);
-            margin-top: 15px;
-            box-shadow: 0px 0px 5px rgb(163, 108, 6);
-            padding: 0 5px;
-            border-radius: 2px;
-            cursor: default;
-        }
-
-        .tip-span {
-            font-size: 0.8rem;
-            color: #999;
-        }
-
-        .tab-bar {
-            box-shadow: -2px 2px 1px rgb(238, 173, 87);
-        }
-
-        /* 移动端 */
-        @media screen and (max-width: 768px) {
-            img.topleft {
-                opacity: 0.2;
-            }
-
-            #f12 {
-                display: none;
-            }
-
-            .footer {
-                display: none;
-            }
-        }
-    </style>
-</header>
-
-<body>
-    <div class="coffee_cup loader"></div>
-    <div class="home" style="display: none;">
-        <!-- slogan -->
-        <!-- <h3 class="principle">生命以负<span title='傲慢、贪婪、色欲、嫉妒、暴食、愤怒、怠惰'>熵</span>为食
-            <img id='rotate' src="./assets/img/sun.svg" width="50" height="50" title='愿你今日美好' type="image/svg+xml" />
-        </h3> -->
-        <h3 class="principle">黄沙百战穿金甲 不破楼兰终不还 <img id='rotate' src="./assets/img/sun.svg" width="50" height="50" title='愿你今日美好' type="image/svg+xml" /></h3>
-        <img src="./assets/img/tree.png" alt="" class="topleft">
-        <!-- 内容 -->
-        <div class="content-wrap">
-            <div class="intro">
-                <div class="chinese-wrapper">
-                    <p class="intro-line"><b class="tab-bar">你好</b></p>
-                    <p class="intro-line">遇见即是缘起，很高兴能遇见你！你可以叫我 —— <b>阿燃</b>！<span
-                            style="font-size: 12px;color:#666">（AKA：<a title="吾本是58粉，后亦是风尘四侠粉，社会我瓜哥，人狠话不多，懂的都懂"
-                                target="_blank" href="https://juejin.im/user/5bcd67a8e51d457947022910">掘金安东尼</a>）</span>
-                    </p>
-                    <p class="intro-line">我是一名<span title="不卑不亢 砥砺前行"><a target="_blank"
-                                href='https://www.zhihu.com/question/19589966'>前端开发工程师</a></span>。
-                    </p>
-                    <p class="intro-line">我使用 GitHub Page 托管 <span title="点它！"><a target="_blank"
-                                href='https://tuaran.github.io'><b style="color: #555">我的博客</b></a></span>，用于分享交流技术与生活。
-                    </p>
-                    <p class="intro-line">非常欢迎你能到我的<span title="毕竟面向 star 编程（手动狗头）"><a target="_blank"
-                                href="https://github.com/TUARAN">仓库主页</a></span>互相 follow !<b>⭐star⭐</b>！
-                    </p>
-                    <p class="intro-line">你也可在这些地方找到我：<span title='I love "juejin.im".'><a target="_blank"
-                                href="https://juejin.im/user/5bcd67a8e51d457947022910">掘金</a></span>、<span
-                            title="中国最大程序员社区，就是这么刚！"><a target="_blank"
-                                href="https://blog.csdn.net/qq_37969897/">CSDN</a></span>、<span
-                            title="人在蒙古、刚下航母、麻省毕业、长相彦祖"><a target="_blank"
-                                href="https://www.zhihu.com/people/tu-tu-tu-tu-tu-25-1">知乎</a></span>、<span
-                            title="心有猛虎 细嗅蔷薇"><a target="_blank"
-                                href="https://www.huxiu.com/member/2412214.html">虎嗅</a></span>、<span
-                            title="每日一题，健康幸福一百年"><a target="_blank"
-                                href="https://leetcode-cn.com/u/tuaran/">力扣</a></span>。我将努力在这些平台保持活跃，你愿意与我同行吗？</p>
-                    <p class="intro-line"></p>
-
-                    <p class="intro-line"><b class="tab-bar">资源</b></p>
-                    <p class="intro-line">1. 如果你想加群？进击的前端群、程序员兼职群、程序员炒股群、微信读书群；</p>
-                    <p class="intro-line">2. 如果你想获取学习资源？前端学习资料、Vue 教学视频、Adobe 等破解软件；</p>
-                    <p class="intro-line">3. 如果你有不错的项目想法？需要帮手？我就是你的资源！</p>
-                    <p class="intro-line">加微信号：<span style="color:orange;user-select:text;"><i>Ifuckinghigh</i>
-                        </span><span class="tip-span">（Tip：公众号维护中，请耐心等待~）</span></p>
-                    <p class="intro-line"></p>
-
-                    <p class="intro-line"><b class="tab-bar">项目</b></p>
-                    <p class="intro-line">同时，我在自己的 ECS 上搭建了一些 web 服务。致力于做<b>有用的</b>个人站点！以下：</p>
-                    <p class="intro-line"><span title="这是一个前端开发在学习路上对浏览器书签收纳整理的网站！">1. 前端书签网 <a target="_blank"
-                                href="http://febm.tuaran.site">febm.tuaran.site</a>；<span
-                                class="tip-span">（前端书签集大成者，持续维护）</span></span></p>
-                    <p class="intro-line"><span title="你可以在上面记录你的每天，每天都立Flag！O(∩_∩)O">2. 每日一立 <a target="_blank"
-                                href="http://ddup.tuaran.site">ddup.tuaran.site</a>；<span class="tip-span">（每日都立
-                                Flag？持续维护）</span></span></p>
-                    <p class="intro-line"><span title="免费的图床服务！你要的图床功能，我都可以有！">3. 图床服务 <a target="_blank"
-                                href="http://120.78.205.57:3000">tarsFigureBed</a>；<span
-                                class="tip-span">（免费图床，持续维护）</span></span></p>
-                    <p class="intro-line"><span title="免费的图床服务！你要的图床功能，我都可以有！">4. 更多......<span
-                                class="tip-span">（期待合作，合作共赢）</span</span> </p> <p class="intro-line">
-                    </p>
-                </div>
-                <div class="english-wrapper" style="display:none;">
-                    <p class="intro-line"><b> HELLO! </b>Meeting is fate, it’s nice to meet you!you can call me
-                        <b>Aran</b>[ˈerən]!</p>
-                    <p class="intro-line">
-                        I am a<span title="Be neither humble nor hyperactive"><span>
-                                Front-end development engineer</span></span>.
-                    </p>
-                    <p class="intro-line">I use <i>GitHub Page</i> to host my blog <span title=""><a target="_blank"
-                                href='https://tuaran.github.io'><b style="color: #555">my blog</b></a></span>.
-                        to share technology and life.
-                    </p>
-                    <p class="intro-line">You are very welcome to go to my<span title=""><a target="_blank"
-                                href="https://github.com/TUARAN"> homepage </a></span>to follow each other
-                        and <b>⭐star⭐</b>!
-                    </p>
-                    <p class="intro-line">
-                        You can also find me in these places:<span title=""><a target="_blank"
-                                href="https://www.youtube.com/channel/UCAGh-sfG2kwLq36m34y3O1w?view_as=subscriber">youtube</a></span>,<span
-                            title=""><a target="_blank" href="https://twitter.com/tarsixseveneig1">twitter</a></span>.
-                    </p>
-                    <p class="intro-line">I will remain active on these platforms. Will you walk with me?</p>
-                    <p class="intro-line"></p>
-                    <p class="intro-line"></p>
-                    <p class="intro-line">At the same time, I built some web services on my ECS.
-                        Committed to being a<b> useful </b> personal site!</p>
-                    <p class="intro-line"><span title="">1. Frontend Bookmark: <a target="_blank"
-                                href="http://febm.tuaran.site">febm.tuaran.site</a>;</span></p>
-                    <p class="intro-line"><span title="">2. Record Daily: <a target="_blank"
-                                href="http://ddup.tuaran.site">ddup.tuaran.site</a>;</span></p>
-                    <p class="intro-line"><span title="">3.
-                            Picture Bed Service: <a target="_blank"
-                                href="http://120.78.205.57:3000">tarsFigureBed</a>;</span></p>
-                </div>
-                <!-- 右上角MENU -->
-                <p class="intro-line translate">
-                    <span id='f12'> | F12 </span>
-                    <span id="toEnglish"> | Engilish | </span><span id="toChinese" style="display: none;"> | 中文 |
-                    </span>
-                    <br>
-                    <span class="slideTip" style="display: none;">控制台 Console 有彩蛋！</span>
-                    <br>
-                </p>
-            </div>
-        </div>
-        <!-- 页脚 -->
-        <div class="footer">
-            <div class="footer-p beian">粤ICP备20050840号 <span>©2020</span></div>
-            <div class="footer-p ">Statistic Analysis Power By <a class="bottom-link" target="_blank"
-                    href='https://analytics.google.com/analytics/web/provision/#/provision'>Google Analytics</a> | <a
-                    target="_blank" class="bottom-link" href='https://search.google.com/search-console'> Google Search
-                    Console</a> | <a class="bottom-link" href="https://cloud.google.com">More Support</a></div>
-        </div>
-        <div class="footer-p uareawsome">
-            <div id="resume" title="这都被你发现了，好啦，算你厉害！">| RESUME |</div>
-        </div>
-    </div>
-</body>
-<script>
-    console.log("----------------------- 更多相关 -----------------------\n诚邀志同道合者同行 ~\n")
-    console.log("1. 加我微信号😁：", "Ifuckinghigh")
-    var consoleImg = '%c' + ' '
-    console.log(consoleImg,
-        "padding:66px 88px;background:url('http://tuaran.site:3001/uploads/61dd3e7989a9f2af212818b1ae726f4d.jpg') no-repeat;background-size:contain;"
-    );
-    console.log("2. Base📍：", "广州")
-    console.log("3. 毕业院校🏫：", "华师（SCNU）")
-    console.log("4. 我还关注👀：")
-    const focusArr = [{
-            "关注": '科哲神学',
-            "备注": "feat.量子力学",
-        },
-        {
-            "关注": '电影解说',
-            "备注": "也想当个电影解说的 youtuber",
-        },
-        {
-            "关注": '微信读书',
-            "备注": "向五百小时进发！",
-        },
-        {
-            "关注": '股票',
-            "备注": "A股虐我千百遍，我待A股如初恋",
-        },
-        {
-            "关注": '壁纸制作',
-            "备注": "https://wallhaven.cc/user/paperhawen"
-        },
-
-        {
-            "关注": 'JRS',
-            "备注": "玩梗别认真"
-        },
-        {
-            "关注": '祖安狂人',
-            "备注": "我亚索真的挺6"
-        },
-    ];
-    console.table(focusArr);
-    console.log("----------------------- 网站相关 -----------------------")
-    console.log("1. loading and network information🔍:", chrome.loadTimes())
-    console.log("2. 阿里云推荐码🐎：https://www.aliyun.com/minisite/goods?userCode=nk1m1mfv");
-    console.log("3. 备案变更🔒base64：REhIOTMz");
-</script>
-<script>
-    // loading
-    window.onload = function () {
-        var loader = document.getElementsByClassName("loader")[0];
-        var home = document.getElementsByClassName("home")[0];
-        loader.style.display = "none"
-        home.style.display = "flex"
-    }
-    // 监听点击
-    document.getElementById("f12").addEventListener("click", function () {
-        //  S 模拟按键 不能模拟打开控制台
-        var display = document.getElementsByClassName("slideTip")[0].style.display;
-        if (display == 'none') {
-            document.getElementsByClassName("slideTip")[0].style.display = "inline-block"
-        } else {
-            document.getElementsByClassName("slideTip")[0].style.display = "none"
-        }
-    }, false);
-    document.getElementById("toEnglish").addEventListener("click", function () {
-        document.getElementsByClassName("chinese-wrapper")[0].style.display = "none"
-        document.getElementsByClassName("english-wrapper")[0].style.display = "block"
-        document.getElementById("toEnglish").style.display = "none"
-        document.getElementById("toChinese").style.display = "inline-block"
-    }, false);
-    document.getElementById("toChinese").addEventListener("click", function () {
-        document.getElementsByClassName("chinese-wrapper")[0].style.display = "block"
-        document.getElementsByClassName("english-wrapper")[0].style.display = "none"
-        document.getElementById("toEnglish").style.display = "inline-block"
-        document.getElementById("toChinese").style.display = "none"
-    }, false);
-    document.getElementById("resume").addEventListener("click", function () {
-        window.open("/resume")
-    }, false);
-    // TODO: set BGM
-</script>
-
-</html>
+               <filter id="squiggly-4">
+                   <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4" />
+                   <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
+               </filter>
+           </defs>
+       </svg>
+   </body>
+   </html>

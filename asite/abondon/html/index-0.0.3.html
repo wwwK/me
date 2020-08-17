@@ -1,0 +1,108 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TUARAN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,500,700" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: calc(10px + 0.33vw);
+            -webkit-font-smoothing: antialiased;
+            padding: 5vh 10vw;
+            color: #121314;
+            background: #FDFDFD url('./assets/img/pattern.webp') repeat-x;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: 1.6em;
+            font-weight: 300;
+            line-height: 1.4;
+            max-width: 26em;
+        }
+
+        a {
+            text-decoration: none;
+            color: #121314;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        a:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 60%;
+            left: -0.1em;
+            right: -0.1em;
+            bottom: 0;
+            transition: top 200ms cubic-bezier(0, .8, .13, 1);
+            background-color: rgb(255, 238, 2);
+        }
+
+        a:hover:after {
+            top: 0%;
+        }
+
+        #rotate {
+            animation: spin 3s steps(24) infinite;
+            margin-left: 5px;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .footer {
+            color: rgba(153, 153, 153, 0.637);
+            font-size: 0.8rem;
+            margin-top: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>遇见即缘起<img id='rotate' src="./assets/img/sun.svg" width="50" height="50" title='愿你今日美好' type="image/svg+xml" />
+    </h1>
+    <p style="font-weight:500; font-size:2em">
+        I am Aran.
+    </p>
+    <p>
+        一名职业前端开发攻城狮。
+    </p>
+    <p>我使用 GitHub Page 托管<a href="https://tuaran.github.io" target="_blank"> 我的博客 </a> 用于交流技术、分享生活。
+    </p>
+    <p>
+    </p>
+    <p>
+        你也可以在这些平台找到我，我将努力保持活跃：
+    </p>
+    <p>
+        <a href="https://juejin.im/user/5bcd67a8e51d457947022910" target="_blank">掘金</a>、
+        <a href="https://www.zhihu.com/people/tu-tu-tu-tu-tu-25-1" target="_blank">知乎</a>、
+        <a href="https://www.huxiu.com/member/2412214.html" target="_blank">虎嗅</a>、
+        <a href="https://leetcode-cn.com/u/tuaran/" target="_blank">力扣</a>
+    </p>
+    <p>
+        我对这些领域也同样感兴趣：阅读、电影、金融投资、游戏、科哲神学等。
+    </p>
+    <p>
+        目前，我正处在由吸收转为产出的阶段。期待与你同行！
+    </p>
+</body>
+
+</html>

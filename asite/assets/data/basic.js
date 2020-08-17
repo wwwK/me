@@ -103,7 +103,7 @@ const articleArr = [{
         item: "《腾讯面试四问，Are you OK?》",
         link: 'https://juejin.im/post/6854899692178948109',
         view: '6k+',
-        like: '180+'
+        like: '200+'
     },
     {
         item: "《作为一个卑微的前端仔，我收集了哪些网站链接？》",

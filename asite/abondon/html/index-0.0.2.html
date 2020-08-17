@@ -11,6 +11,9 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171085431-1"></script>
     <!-- 信念产生行动 行动养成习惯 习惯生成性格 性格决定命运 -->
+    <!-- 从最坏处打算，向最好处努力 -->
+    <!-- 我们总高估了短期，低估了长期 -->
+    <!-- 生命以负熵为食 -->
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -45,8 +48,8 @@
                     </div>
                 </el-card>
                 <br>
-                <el-tabs type="border-card" class="tabs-box">
-                    <el-tab-pane label="资源">
+                <el-tabs type="border-card" class="tabs-box" v-model='tabValue'>
+                    <el-tab-pane label="资源" name='source'>
                         <el-card class="box-card" style="min-height: 208px;line-height: 24px;">
                             <p>1. 如果你想加群？
                                 <el-popover placement="top-start" width="200" trigger="hover">
@@ -79,7 +82,7 @@
                             <p></p>
                         </el-card>
                     </el-tab-pane>
-                    <el-tab-pane label="项目">
+                    <el-tab-pane label="项目" name='project'>
                         <el-card class="box-card" style="min-height: 208px;line-height: 24px;">
                             <p><span title="这是一个前端开发在学习路上对浏览器书签收纳整理的网站！">1. 前端书签网 <a target="_blank"
                                         href="http://febm.tuaran.site">febm.tuaran.site</a>；<span
@@ -95,9 +98,8 @@
                             </p>
                         </el-card>
                     </el-tab-pane>
-                    <el-tab-pane label="文章推荐">
+                    <el-tab-pane label="文章推荐" name='article'>
                         <el-card class="box-card scroll-wrap" style="min-height: 208px;line-height: 24px;">
-                            <!-- <a href='https://juejin.im/user/5bcd67a8e51d457947022910/posts'>更多尽在主页</a> -->
                             <div class="scroll-content" :style="{ top,transition }">
                                 <div v-for="(o,i) in articleArr" :key="o.item" class="text item"
                                     style="white-space: nowrap;">
@@ -108,7 +110,7 @@
                             </div>
                         </el-card>
                     </el-tab-pane>
-                    <el-tab-pane label="近期计划">
+                    <el-tab-pane label="近期计划" name='plan'>
                         <el-card class="box-card" style="min-height: 208px;line-height: 24px;">
                             <el-tag @click="showDrawer(tag.key)" type="warning" v-for="tag in planTags" :key="tag.name"
                                 style="margin:5px 10px;cursor: pointer;">
@@ -189,6 +191,7 @@
 <script type="module">
     import {plan} from './assets/data/plan.js'
     import {introText,articleArr,focusArr,performanceTime} from './assets/data/basic.js'
+    let timer;
     var app = new Vue({
         el: '#app',
         data: {
@@ -227,42 +230,48 @@
             currentSelect: '',
             pre:{},
             check:{},
-            activeIndex: 0
+            activeIndex: 0,
+            tabValue:'source'
         },
         created() {},
         computed: {
             top() {
-                return - this.activeIndex * 80 + 'px';
+                return - this.activeIndex * 50 + 'px';
             },
             transition() {
-                return this.activeIndex === 0 ? 'none' : 'top 10s';
+                return this.activeIndex === 0 ? 'none' : 'top 2s';
             }
         },
-        watched: {
-
+        watch: {
+            tabValue:function(val){
+                if(val=='article'){
+                    clearInterval(timer)
+                    this.scrollArticle()
+                }else{
+                    this.activeIndex=0
+                    clearInterval(timer)
+                }
+            }
         },
         mounted() {
             this.loading = false;
             this.$refs.home.style.display = 'flex'
             this.todayMY()
             this.handleConsole()
-            this.scrollArticle()
         },
         methods: {
             scrollArticle(){
-            // 滚动显示文章
-            setInterval(_ => {
-                        if(this.activeIndex===0){
-                            
-                            this.activeIndex =1; // 上移
-                        }else{
-                            
-                            let temp=this.articleArr[0]
-                            this.articleArr.splice(0,1)// 删除第一个
-                            this.articleArr.push(temp)// 移到队尾
-                            this.activeIndex=0
-                        }
-                }, 3000);
+                // 滚动显示文章
+                timer=setInterval(_ => {
+                            if(this.activeIndex===0){
+                                this.activeIndex =1; // 上移
+                            }else{
+                                let temp=this.articleArr[0]
+                                this.articleArr.splice(0,1)// 删除第一个
+                                this.articleArr.push(temp)// 移到队尾
+                                this.activeIndex=0
+                            }
+                    }, 1000);
             },
             todayMY(){
                 // 计算今天：月-日
