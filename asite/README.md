@@ -6,11 +6,11 @@
 
 * index-0.0.2.html
 
-1. 风格极简
+1. 极简风格
 2. 使用 vue、element，依赖多。
 3. 没路由，未使用打包，首屏慢
 
-* index-0.0.3.html
+* index-0.0.3.html（abondon）
 
 1. mock evan you blog index
 

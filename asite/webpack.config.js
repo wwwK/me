@@ -2,10 +2,12 @@
 const path = require('path')
 const VENOR = ["lodash"]
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
     entry: {
         bundle: './pack/index.js', // 入口文件
+        plan:'./pack/plan.js'
         // vendor: VENOR // 第三方库分包
     },
     output: {
@@ -18,18 +20,19 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: ['style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true
-                        }
-                    }
-                ]
+                use: ['style-loader','css-loader']
             },
             {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                  limit: 20000,
+                  name: 'fonts/[name]-[hash].[ext]'
+                }
             },
             {
                 // 图片格式正则
@@ -39,15 +42,25 @@ module.exports = {
                         loader: 'url-loader',
                         // 配置 url-loader 的可选项
                         options: {
-                        // 限制 图片大小 10000B，小于限制会将图片转换为 base64格式
-                          limit: 10000,
+                        // 限制 图片大小 5000B，小于限制会将图片转换为 base64格式
+                          limit: 5000,
                         // 超出限制，创建的文件格式
                         // build/images/[图片名].[hash].[图片格式]
                           name: 'images/[name].[hash].[ext]'
                        }
                       }
                     ]
-                }
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+              },
+              // 它会应用到普通的 `.js` 文件
+              // 以及 `.vue` 文件中的 `<script>` 块
+              {
+                test: /\.js$/,
+                loader: 'babel-loader'
+              }
         ]
     },
     plugins: [
@@ -63,5 +76,17 @@ module.exports = {
             filename: 'index.html',
             template: 'index.html'
           }),
+        new HtmlWebpackPlugin({
+            filename: 'iplan.html',
+            template: 'iplan.html',
+            minify: {
+                removeAttributeQuotes:true,
+                removeComments: true,
+                collapseWhitespace: true,
+                removeScriptTypeAttributes:true,
+                removeStyleLinkTypeAttributes:true
+            }
+        }),
+        new VueLoaderPlugin()
       ]
 }
