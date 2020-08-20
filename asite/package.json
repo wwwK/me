@@ -5,7 +5,8 @@
     "main": "pack/index.js",
     "scripts": {
         "build": "node_modules/.bin/webpack",
-        "dev": "webpack-dev-server --open"
+        "dev": "webpack-dev-server --open",
+        "build:dll": "webpack --config webpack.dll.config.js"
     },
     "dependencies": {
         "dayspan-vuetify": "^0.4.0",
@@ -24,6 +25,7 @@
         "node-sass": "^4.14.1",
         "sass-loader": "^9.0.3",
         "style-loader": "^1.2.1",
+        "uglifyjs-webpack-plugin": "^2.2.0",
         "url-loader": "^4.1.0",
         "vue-loader": "^15.9.3",
         "vue-template-compiler": "^2.6.11",

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import DaySpanVuetify from 'dayspan-vuetify'
-import App from './dayspan.vue'
+import App from './components/dayspan.vue'
 
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'

@@ -17,7 +17,7 @@
   }
   
   /* MAIN VARIABLES FOR CUSTOMIZATION */
-  $numOfItems: 4;
+  $numOfItems: 5;
   $navAT: 1s;
   $textDelayStep: 0.1s;
   /* -------------------------------- */
@@ -94,7 +94,7 @@
       width: $itemWidth;
       text-align: center;
       color: #6C7784;
-      font-size: 14px;
+      font-size: 1rem;
       line-height: $btnSize;
       font-family: $font;
       font-weight: bold;
