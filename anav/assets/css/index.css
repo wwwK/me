@@ -1,0 +1,34 @@
+#rotate {
+    animation: spin 6s steps(36) infinite;
+    margin-bottom: 50px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sun {
+    text-align: center;
+}
+
+.happy-dog {
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: #6C7784;
+}
+.animate-content{
+    transition: all 2s linear;
+}
+body{
+    transition: all 1s linear;
+}
